@@ -1,16 +1,15 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page User</title>
+    <title>Login Page Admin</title>
     
 </head>
 <body>
     <div>
         <h2>Login</h2>
 
-        <form action="user_dashboard.html" method="post">
+        <form action="templates\admin_dashboard.html" method="post">
             <div>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -19,6 +18,11 @@
             <div>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+            </div>
+	    <br>
+            <div>
+                <input type="checkbox" id="isAdmin" name="isAdmin">
+                <label for="isAdmin">Login as Admin</label>
             </div>
 	    <br>
             <div>
