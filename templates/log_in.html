@@ -1,35 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    
-</head>
+<h1>Log in page</h1>
 <body>
     <div>
         <h2>Login</h2>
-	<br>
-        <form action="#" method="post">
+        <br>
+        <form action="#" method="post" onsubmit="return redirect()">
             <div>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
             </div>
-	    <br>
+            <br>
             <div>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-	    <br>
+            <br>
             <div>
                 <input type="checkbox" id="isAdmin" name="isAdmin">
                 <label for="isAdmin">Login as Admin</label>
             </div>
-	    <br>
+            <br>
             <div>
                 <input type="submit" value="Login">
             </div>
         </form>
+        <script>
+            function redirect() {
+              var isAdminCheckbox = document.getElementById("isAdmin");
+              if (isAdminCheckbox.checked) {
+                window.location.href = "admin/admin_dashboard.html";
+              } else {
+                window.location.href = "user/user_dashboard.html";
+              }
+              return false; // Prevent form submission
+            }
+        </script>
     </div>
 </body>
 </html>
