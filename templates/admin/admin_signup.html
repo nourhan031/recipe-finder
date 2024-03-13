@@ -7,7 +7,7 @@
   </head>
   <body>
     <h2>Sign Up</h2>
-    <form action="#" method="POST" onsubmit="return redirect()">
+    <form action="admin_dashboard.html" method="POST">
       <label for="username">Username:</label><br />
       <input type="text" id="username" name="username" required /><br />
 
@@ -25,25 +25,8 @@
       <label for="email">Email:</label><br />
       <input type="email" id="email" name="email" required /><br />
 
-      <label for="role">Choose Role:</label><br />
-      <select id="role" name="role">
-        <option value="user">User</option>
-        <option value="admin">Admin</option></select
-      ><br /><br />
-
+      <br />
       <input type="submit" value="Sign Up" />
     </form>
-
-    <script>
-      function redirect() {
-        var role = document.getElementById("role").value;
-        if (role === "admin") {
-          window.location.href = "admin/admin_dashboard.html";
-        } else {
-          window.location.href = "user/user_dashboard.html";
-        }
-        return false;
-      }
-    </script>
   </body>
 </html>
