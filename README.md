@@ -1,1 +1,1 @@
-# recipe_finder
+# recipe-finder
