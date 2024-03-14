@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
     <div class="container">
         <h1>Admin Dashboard</h1>
@@ -18,9 +25,17 @@
                      <a href="#" onclick="deleteRecipe(1)">Delete</a>
                   </li>
                 </div>
-                  
-        <!-- Add more list items as needed -->
-               </ul>
+                 </ul>
+
+                 <ul>
+                    <div id="veg_rice">
+                        <li>Vegetable Fried Rice - 
+                           <a href="/templates/recipes/viewVegRice.html">View</a> | 
+                           <a href="edit_recipe.html">Edit</a> | 
+                           <a href="#" onclick="deleteRecipe(1)">Delete</a>
+                        </li>
+                      </div>
+                 </ul>
         </div>
 
         <div id="edit-recipe-form">
@@ -29,3 +44,4 @@
         </div>
     </div>
     </body>
+</html>

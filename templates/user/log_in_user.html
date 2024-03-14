@@ -1,16 +1,15 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page User</title>
-    
+    <title>login_user</title>
 </head>
 <body>
     <div>
         <h2>Login</h2>
 
-        <form action="user_dashboard.html" method="post">
+        <form action="templates/base.html" method="post">
             <div>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -22,9 +21,13 @@
             </div>
 	    <br>
             <div>
-                <input type="submit" value="Login">
+                <!-- <input type="submit" value="Login"> -->
+                <a href="/templates/base.html">
+                    <button type="button">Login</button>
+                </a>
             </div>
         </form>
+        
     </div>
 </body>
 </html>
