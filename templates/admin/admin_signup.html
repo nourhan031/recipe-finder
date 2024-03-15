@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-  </head>
-  <body>
-    <h2>Sign Up</h2>
-    <form action="admin_dashboard.html" method="POST">
-      <label for="username">Username:</label><br />
-      <input type="text" id="username" name="username" required /><br />
 
-      <label for="password">Password:</label><br />
-      <input type="password" id="password" name="password" required /><br />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+</head>
 
-      <label for="confirm_password">Confirm Password:</label><br />
-      <input
-        type="password"
-        id="confirm_password"
-        name="confirm_password"
-        required
-      /><br />
+<body>
 
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br />
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="../base.html">Home</a></li>
+      <li><a href="../recipes/recipes_list.html">Recipes</a></li>
+      <li><a href="../user/log_in_user.html">Login As User</a></li>
+      <li><a href="../admin/log_in_admin.html">Login As Admin</a></li>
+      <li><a href="../user/user_signup.html">Sign Up As User</a></li>
+      <li><a href="../admin/admin_signup.html">Sign Up As Admin</a></li>
+    </ul>
+  </nav>
 
-      <br />
-      <!-- <input type="submit" value="Sign Up" /> -->
-      <a href="/templates/admin/admin_dashboard.html">
-        <button type="button">Sign up</button>
-      </a>
-    </form>
-  </body>
+  <h2>Sign Up</h2>
+  <form action="admin_dashboard.html" method="POST">
+    <label for="username">Username:</label><br />
+    <input type="text" id="username" name="username" required /><br />
+
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" name="password" required /><br />
+
+    <label for="confirm_password">Confirm Password:</label><br />
+    <input type="password" id="confirm_password" name="confirm_password" required /><br />
+
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" required /><br />
+
+    <br />
+    <!-- <input type="submit" value="Sign Up" /> -->
+    <a href="/templates/admin/admin_dashboard.html">
+      <button type="button">Sign up</button>
+    </a>
+  </form>
+</body>
+
 </html>
