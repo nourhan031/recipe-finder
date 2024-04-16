@@ -6,27 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
     <link rel="stylesheet" href="/static/css/categories.css">
+    <link rel="stylesheet" href="/static/css/base.css">
 </head>
 
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/templates/base.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" id="explore">Explore</a>
+                <div class="dropdown-content">
+                    <a href="/templates/recipes/categories.html">Categories</a>
+                    <a href="/templates/recipes/recipes_list.html">Recipes</a>
+                </div>
+            </li>
+            <li>
+                <a href="/templates/user/log_in_user.html" id="profile-link">
+                    <span id="login-text">Profile</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
     <h1>Categories</h1>
 
     <div class="category">
-        <a href="#">
+        <a href="/templates/recipes/lunch.html">
             <img src="/static/images/lunch.jpeg" alt="Lunch">
             <div class="caption">Lunch</div>
         </a>
     </div>
 
     <div class="category">
-        <a href="#">
+        <a href="/templates/recipes/dessert.html">
             <img src="/static/images/dessert.jpeg" alt="Dessert">
             <div class="caption">Dessert</div>
         </a>
     </div>
 
     <div class="category">
-        <a href="#">
+        <a href="/templates/recipes/quick_easy.html">
             <img src="/static/images/quick_easy.jpg" alt="Quick & Easy">
             <div class="caption">Quick & Easy</div>
         </a>

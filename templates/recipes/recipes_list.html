@@ -6,49 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uploaded Recipes</title>
     <link rel="stylesheet" href="/static/css/categories.css">
+    <link rel="stylesheet" href="/static/css/base.css">
 </head>
 
 <body>
-
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="../base.html">Home</a></li>
-            <li><a href="../recipes/recipes_list.html">Recipes</a></li>
-            <li><a href="../user/log_in_user.html">Login As User</a></li>
-            <li><a href="../admin/log_in_admin.html">Login As Admin</a></li>
-            <li><a href="../user/user_signup.html">Sign Up As User</a></li>
-            <li><a href="../admin/admin_signup.html">Sign Up As Admin</a></li>
+            <li><a href="/templates/base.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" id="explore">Explore</a>
+                <div class="dropdown-content">
+                    <a href="/templates/recipes/categories.html">Categories</a>
+                    <a href="/templates/recipes/recipes_list.html">Recipes</a>
+                </div>
+            </li>
+            <li>
+                <a href="/templates/user/log_in_user.html" id="profile-link">
+                    <span id="login-text">Profile</span>
+                </a>
+            </li>
+
         </ul>
     </nav>
 
-    <h2>Uploaded Recipes</h2>
+    <h1>Uploaded Recipes</h1>
 
     <div class="category">
-        <a href="#">
+        <a href="/templates/recipes/viewPB.html">
             <img src="/static/images/PB.jpg" alt="PB treats">
             <div class="caption">No bake peanut butter treats</div>
         </a>
     </div>
 
     <div class="category">
-        <a href="#">
+        <a href="/templates/recipes/viewVegRice.html">
             <img src="/static/images/veg_rice.jpg" alt="veg rice">
             <div class="caption">Vegetable fried rice</div>
         </a>
     </div>
 
     <div class="category">
-        <a href="#">
+        <a href="/templates/recipes/margherita.html">
             <img src="/static/images/pizza.jpg" alt="Quick & Easy">
             <div class="caption">Margherita pizza</div>
         </a>
     </div>
 
     <div class="category">
-        <a href="#">
+        <a href="/templates/recipes/chickenSF.html">
             <img src="/static/images/chicken.jpg" alt="chicken stir fry">
             <div class="caption">Chicken stir fry</div>
+        </a>
+    </div>
+
+    <div class="category">
+        <a href="/templates/recipes/garlic_bread.html">
+            <img src="/static/images/garlic_bread.jpg" alt="cheesy garlic bread">
+            <div class="caption">Cheesy Garlic Bread</div>
         </a>
     </div>
 
