@@ -77,5 +77,6 @@ footer {
 
 /* Style the dropdown options on hover */
 .dropdown-content a:hover {
-    background-color: #ddd; /* Change to desired hover color */
+    background-color: #ddd; 
 }
+
