@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login_user</title>
-    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/user_login.css" />
   </head>
 
   <body>
@@ -19,18 +19,22 @@
             <a href="/templates/recipes/recipes_list.html">Recipes</a>
           </div>
         </li>
-        <li>
-          <a href="/templates/user/log_in_user.html" id="profile-link">
+        <li class="dropdown">
+          <a href="#" id="profile-link">
             <span id="login-text">Profile</span>
+            <div class="dropdown-content">
+              <a href="/templates/user/log_in_user.html">Login as user</a>
+              <a href="/templates/user/user_signup.html">Sign-up as user</a>
+              <a href="/templates/admin/log_in_admin.html">Login as admin</a>
+              <a href="/templates/admin/admin_signup.html">Sign-up as admin</a>
+            </div>
           </a>
         </li>
       </ul>
     </nav>
-
-    <div>
-      <h2>Login</h2>
-
-      <form action="templates/base.html" method="post">
+    <h2>Login</h2>
+    <div class="form-frame">
+      <form action="/templates/base.html" method="post">
         <div>
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required />
@@ -41,17 +45,10 @@
           <input type="password" id="password" name="password" required />
         </div>
         <br />
-        <div>
-          <!-- <input type="submit" value="Login"> -->
-          <a href="/templates/base.html">
-            <button type="button">Login</button>
-          </a>
-        </div>
+        <input type="submit" value="Login" />
       </form>
     </div>
   </body>
 
-  <!-- <footer>
-    © 2024 Recipe Finder. All rights reserved.
-</footer> -->
+  <footer>© 2024 Recipe Finder. All rights reserved.</footer>
 </html>

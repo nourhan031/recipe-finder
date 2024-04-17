@@ -67,6 +67,7 @@ form label {
 }
 
 form input[type="text"],
+form input[type="email"],
 form input[type="password"] {
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -98,4 +99,28 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+}
+/* Style the dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the dropdown options on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
 }

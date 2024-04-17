@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Finder</title>
-    <link rel="stylesheet" href="/static/css/base.css">
-</head>
+    <link rel="stylesheet" href="/static/css/base.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li><a href="base.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#" id="explore">Explore</a>
-                <div class="dropdown-content">
-                    <a href="recipes/categories.html">Categories</a>
-                    <a href="recipes/recipes_list.html">Recipes</a>
-                </div>
-            </li>
-            <li>
-                <a href="/templates/user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
-                </a>
-            </li>
-
-        </ul>
+      <ul>
+        <li><a href="/templates/base.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" id="explore">Explore</a>
+          <div class="dropdown-content">
+            <a href="/templates/recipes/categories.html">Categories</a>
+            <a href="/templates/recipes/recipes_list.html">Recipes</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="profile-link">
+            <span id="login-text">Profile</span>
+            <div class="dropdown-content">
+              <a href="/templates/user/log_in_user.html">Login as user</a>
+              <a href="/templates/user/user_signup.html">Sign-up as user</a>
+              <a href="/templates/admin/log_in_admin.html">Login as admin</a>
+              <a href="/templates/admin/admin_signup.html">Sign-up as admin</a>
+            </div>
+          </a>
+        </li>
+      </ul>
     </nav>
 
     <h1>Welcome to Recipe Finder</h1>
     <p>Connect with other food enthusiasts and explore delicious recipes!</p>
 
-    <footer>
-        © 2024 Recipe Finder. All rights reserved.
-    </footer>
-
-</body>
-
+    <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+  </body>
 </html>
