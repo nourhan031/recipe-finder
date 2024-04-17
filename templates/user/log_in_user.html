@@ -4,24 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login_user</title>
-    <link rel="stylesheet" href="/templates/admin/Style/user_login.css" />
+    <link rel="stylesheet" href="/static/css/base.css" />
   </head>
 
   <body>
     <!-- Navigation Bar -->
     <nav>
       <ul>
-        <li><a href="../base.html">Home</a></li>
-        <li><a href="../recipes/recipes_list.html">Recipes</a></li>
-        <li><a href="../user/log_in_user.html">Login As User</a></li>
-        <li><a href="../admin/log_in_admin.html">Login As Admin</a></li>
-        <li><a href="../user/user_signup.html">Sign Up As User</a></li>
-        <li><a href="../admin/admin_signup.html">Sign Up As Admin</a></li>
+        <li><a href="/templates/base.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" id="explore">Explore</a>
+          <div class="dropdown-content">
+            <a href="/templates/recipes/categories.html">Categories</a>
+            <a href="/templates/recipes/recipes_list.html">Recipes</a>
+          </div>
+        </li>
+        <li>
+          <a href="/templates/user/log_in_user.html" id="profile-link">
+            <span id="login-text">Profile</span>
+          </a>
+        </li>
       </ul>
     </nav>
-    <h2>Login</h2>
-    <div class="form-frame">
-      <form action="/templates/base.html" method="post">
+
+    <div>
+      <h2>Login</h2>
+
+      <form action="templates/base.html" method="post">
         <div>
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required />
@@ -32,9 +41,17 @@
           <input type="password" id="password" name="password" required />
         </div>
         <br />
-        <input type="submit" value="Login" />
+        <div>
+          <!-- <input type="submit" value="Login"> -->
+          <a href="/templates/base.html">
+            <button type="button">Login</button>
+          </a>
+        </div>
       </form>
-      <footer>© 2024 Recipe Finder. All rights reserved.</footer>
     </div>
   </body>
+
+  <!-- <footer>
+    © 2024 Recipe Finder. All rights reserved.
+</footer> -->
 </html>

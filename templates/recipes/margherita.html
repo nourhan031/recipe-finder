@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/css/base.css">
 </head>
 
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/templates/base.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" id="explore">Explore</a>
+                <div class="dropdown-content">
+                    <a href="/templates/recipes/categories.html">Categories</a>
+                    <a href="/templates/recipes/recipes_list.html">Recipes</a>
+                </div>
+            </li>
+            <li>
+                <a href="/templates/user/log_in_user.html" id="profile-link">
+                    <span id="login-text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 <h1 id="classic-margherita-pizza">Classic Margherita Pizza</h1>
 <p><strong>Ingredients</strong></p>
 <ul>
@@ -19,4 +39,6 @@
 </ul>
 <p><strong>Directions</strong><br>
 Preheat oven to 475°F (245°C). Roll out pizza dough on a baking sheet. Spread tomato sauce over the dough. Tear fresh mozzarella into pieces and distribute evenly over the sauce. Tear fresh basil leaves and scatter them over the cheese. Drizzle olive oil over the pizza and sprinkle with salt and pepper. Bake for 10-12 minutes or until crust is golden brown and cheese is bubbly. Slice and serve.</p>
+</body>
+
 
