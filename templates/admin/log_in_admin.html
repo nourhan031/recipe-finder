@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login_admin</title>
-</head>
+    <link rel="stylesheet" href="/templates/admin/Style/admin_login.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li><a href="../base.html">Home</a></li>
-            <li><a href="../recipes/recipes_list.html">Recipes</a></li>
-            <li><a href="../user/log_in_user.html">Login As User</a></li>
-            <li><a href="../admin/log_in_admin.html">Login As Admin</a></li>
-            <li><a href="../user/user_signup.html">Sign Up As User</a></li>
-            <li><a href="../admin/admin_signup.html">Sign Up As Admin</a></li>
-        </ul>
+      <ul>
+        <li><a href="../base.html">Home</a></li>
+        <li><a href="../recipes/recipes_list.html">Recipes</a></li>
+        <li><a href="../user/log_in_user.html">Login As User</a></li>
+        <li><a href="../admin/log_in_admin.html">Login As Admin</a></li>
+        <li><a href="../user/user_signup.html">Sign Up As User</a></li>
+        <li><a href="../admin/admin_signup.html">Sign Up As Admin</a></li>
+      </ul>
     </nav>
 
-    <div>
-        <h2>Login</h2>
-
-        <form action="templates/base.html" method="post">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <br>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <br>
-            <div>
-                <!-- <input type="submit" value="Login"> -->
-                <a href="/templates/admin/admin_dashboard.html">
-                    <button type="button">Login</button>
-                </a>
-            </div>
-        </form>
-
+    <h2>Login</h2>
+    <div class="form-frame">
+      <form action="admin_dashboard.html" method="POST">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <br />
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <br />
+        <input type="submit" value="Login" />
+      </form>
     </div>
-</body>
-
+    <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+  </body>
 </html>
