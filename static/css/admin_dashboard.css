@@ -2,6 +2,14 @@ h1{
     text-align: center;
 }
 
+.add-recipe{
+    display: flex;
+    justify-content: center;
+}
+
+.add-recipe > button{
+    font-size: large;
+}
 
 #recipe-list {
     text-align: center;
@@ -54,6 +62,6 @@ h1{
 }
 
 .recipe-actions .delete-link {
-    background-color: #f44336; /* Red background for delete link */
-    color: white; /* White text color for delete link */
+    background-color: #f44336;
+    color: white; 
 }

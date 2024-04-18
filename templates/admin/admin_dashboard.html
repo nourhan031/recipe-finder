@@ -4,60 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/admin_dashboard.css">
+    <link rel="stylesheet" href="../../static/css/base.css">
+
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="base.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" id="explore">Explore</a>
+                <div class="dropdown-content">
+                    <a href="categories.html">Categories</a>
+                    <a href="recipes_list.html">Recipes</a>
+                </div>
+            </li>
+            <li>
+                <a href="../user/log_in_user.html" id="profile-link">
+                    <span id="login-text">Profile</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
     <div class="container">
         <h1>Admin Dashboard</h1>
 
         <!-- Button to Add New Recipe -->
-        <a href="admin_add_recipe.html"><button>Add New Recipe</button></a>
+        <a href="admin_add_recipe.html" class="add-recipe"><button>Add New Recipe</button></a>
 
         <div id="recipe-list">
-            <!-- List of Available Recipes -->
-            <!-- Display a table or list of recipes with options to edit and delete -->
             <h2>Uploaded Recipes</h2>
-
-               <ul>
-                <div id="peanut_butter">
-                  <li>No bake peanut butter treats - 
-                     <a href="../recipes/viewPB.html">View</a> | 
-                     <a href="edit_recipe.html">Edit</a> | 
-                     <a href="#" onclick="deleteRecipe(1)">Delete</a>
-                  </li>
+            <div class="recipe-grid">
+                <div class="recipe-item" id="peanut_butter">
+                    <h3>No bake peanut butter treats</h3>
+                    <ul class="recipe-actions">
+                        <li><a href="/templates/recipes/viewPB.html">View</a></li>
+                        <li><a href="edit_recipe.html">Edit</a></li>
+                        <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li>
+                    </ul>
                 </div>
-                 </ul>
-
-                 <ul>
-                    <div id="veg_rice">
-                        <li>Vegetable Fried Rice - 
-                           <a href="../recipes/viewVegRice.html">View</a> | 
-                           <a href="edit_recipe.html">Edit</a> | 
-                           <a href="#" onclick="deleteRecipe(1)">Delete</a>
-                        </li>
-                      </div>
-                 </ul>
-
-                 <ul>
-                    <div id="chicken-sf">
-                        <li>Chicken Stir-Fry - 
-                           <a href="../recipes/chickenSF.html">View</a> | 
-                           <a href="edit_recipe.html">Edit</a> | 
-                           <a href="#" onclick="deleteRecipe(1)">Delete</a>
-                        </li>
-                      </div>
-                 </ul>
-
-                 <ul>
-                    <div id="pizza">
-                        <li>Classic Margherita Pizza - 
-                           <a href="../recipes/margherita.html">View</a> | 
-                           <a href="edit_recipe.html">Edit</a> | 
-                           <a href="#" onclick="deleteRecipe(1)">Delete</a>
-                        </li>
-                      </div>
-                 </ul>
-
-                 
+                <div class="recipe-item" id="veg_rice">
+                    <h3>Vegetable Fried Rice</h3>
+                    <ul class="recipe-actions">
+                        <li><a href="/templates/recipes/viewVegRice.html">View</a></li>
+                        <li><a href="edit_recipe.html">Edit</a></li>
+                        <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li>
+                    </ul>
+                </div>
+                <div class="recipe-item" id="chicken-sf">
+                    <h3>Chicken Stir-Fry</h3>
+                    <ul class="recipe-actions">
+                        <li><a href="/templates/recipes/chickenSF.html">View</a></li>
+                        <li><a href="edit_recipe.html">Edit</a></li>
+                        <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li>
+                    </ul>
+                </div>
+                <div class="recipe-item" id="pizza">
+                    <h3>Classic Margherita Pizza</h3>
+                    <ul class="recipe-actions">
+                        <li><a href="/templates/recipes/margherita.html">View</a></li>
+                        <li><a href="edit_recipe.html">Edit</a></li>
+                        <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div id="edit-recipe-form">
