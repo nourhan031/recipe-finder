@@ -1,0 +1,48 @@
+/* Internal CSS for styling */
+body {
+    font-family: Arial, sans-serif; /* Setting the font family for the entire document */
+    margin: 0; /* Resetting margin */
+    padding: 0; /* Resetting padding */
+    background-color: #f8f8f8; /* Setting background color */
+}
+
+.container {
+    max-width: 800px; /* Setting maximum width for content */
+    margin: 0 auto; /* Centering the container horizontally */
+    padding: 20px; /* Adding padding to the container */
+    box-sizing: border-box; /* Including padding in the width calculation */
+    text-align: center;
+}
+
+h2 {
+    color: #333; /* Changing color of the heading */
+    text-align: center; /* Centering the heading */
+    margin-top: 20px; /* Adding margin on top */
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+p {
+    color: #666; /* Changing color of paragraphs */
+    margin-bottom: 10px; /* Adding margin at the bottom of paragraphs */
+    padding-left: 200px;
+    padding-right: 200px; /* Adding padding to paragraphs */
+}
+
+strong {
+    font-weight: bold; /* Making strong elements bold */
+}
+
+ul {
+    list-style-type: none; /* Removing default bullet points from lists */
+    padding-left: 0; /* Removing default padding from lists */
+    display: flex; /* Adding display: flex; */
+    justify-content: center; /* Adding justify-content: center; */
+}
+
+li {
+    margin-bottom: 5px; /* Adding margin between list items */
+    padding-left: 100px;
+    padding-right: 100px; 
+    
+}

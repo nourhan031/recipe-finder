@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Spaghetti Bolognese</title>
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/css/recipe.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="../base.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" id="explore">Explore</a>
+                <div class="dropdown-content">
+                    <a href="categories.html">Categories</a>
+                    <a href="recipes_list.html">Recipes</a>
+                </div>
+            </li>
+            <li>
+                <a href="../user/log_in_user.html" id="profile-link">
+                    <span id="login-text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <h1>Classic Spaghetti Bolognese</h1>
+
+    <h2>Ingredients</h2>
+    <ul>
+        <li>1 pound ground beef</li>
+        <li>1 onion, chopped</li>
+        <li>2 cloves garlic, minced</li>
+        <li>1 carrot, diced</li>
+        <li>1 celery stalk, diced</li>
+        <li>1 can (14 oz) crushed tomatoes</li>
+        <li>1/2 cup beef broth</li>
+        <li>1 tablespoon tomato paste</li>
+        <li>1 teaspoon dried oregano</li>
+        <li>Salt and pepper to taste</li>
+        <li>Cooked spaghetti for serving</li>
+    </ul>
+
+    <h2>Directions</h2>
+    <p>
+        <ol>
+            <li>In a large skillet, brown ground beef over medium heat.</li>
+            <li>Add chopped onion, minced garlic, diced carrot, and diced celery. Cook until vegetables are softened.</li>
+            <li>Add crushed tomatoes, beef broth, tomato paste, and dried oregano.</li>
+            <li>Season with salt and pepper to taste. Simmer for 20-30 minutes.</li>
+            <li>Serve hot over cooked spaghetti.</li>
+        </ol>
+    </p>
+</body>
+</html>

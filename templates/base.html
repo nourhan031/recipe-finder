@@ -4,38 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Finder</title>
-    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="../static/css/base.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cycle2/2.1.6/jquery.cycle2.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+    <style>
+   #slideshow {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  #slideshow img {
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: block;
+    margin: 0 auto;
+  }
+  @media (min-width: 50) {
+    #slideshow {
+      margin: 0;
+    }
+  }
+    </style>
   </head>
 
   <body>
-    <!-- Navigation Bar -->
-    <nav>
+    
+<nav>
       <ul>
-        <li><a href="/templates/base.html">Home</a></li>
+        <li><a href="base.html">Home</a></li>
         <li class="dropdown">
           <a href="#" id="explore">Explore</a>
           <div class="dropdown-content">
-            <a href="/templates/recipes/categories.html">Categories</a>
-            <a href="/templates/recipes/recipes_list.html">Recipes</a>
+            <a href="recipes/categories.html">Categories</a>
+            <a href="recipes/recipes_list.html">Recipes</a>
           </div>
         </li>
         <li class="dropdown">
           <a href="#" id="profile-link">
             <span id="login-text">Profile</span>
             <div class="dropdown-content">
-              <a href="/templates/user/log_in_user.html">Login as user</a>
-              <a href="/templates/user/user_signup.html">Sign-up as user</a>
-              <a href="/templates/admin/log_in_admin.html">Login as admin</a>
-              <a href="/templates/admin/admin_signup.html">Sign-up as admin</a>
+              <a href="user/log_in_user.html">Login as user</a>
+              <a href="user/user_signup.html">Sign-up as user</a>
+              <a href="admin/log_in_admin.html">Login as admin</a>
+              <a href="admin/admin_signup.html">Sign-up as admin</a>
             </div>
           </a>
         </li>
       </ul>
     </nav>
-
     <h1>Welcome to Recipe Finder</h1>
     <p>Connect with other food enthusiasts and explore delicious recipes!</p>
-
+    <div id="slideshow">
+      <img src="../static/images/chicken.jpg" alt="Slide 1" >
+      <img src="../static/images/dessert.jpeg" alt="Slide 2" >
+      <img src="../static/images/salmon.jpg" alt="Slide 3" >
+      <img src="../static/images/veg_rice.jpg" alt="Slide 4" >
+      <img src="../static/images/veggies.jpg" alt="Slide 5" >
+      <img src="../static/images/koreanchicken.jpg" alt="Slide 6" >
+    </div>
     <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+    <script>
+      $(document).ready(function() {
+        $('#slideshow').cycle({
+          fx: 'fade',
+          speed: 1000,
+          timeout: 3000
+        });
+      });
+    </script>
   </body>
 </html>
