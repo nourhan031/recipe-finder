@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+}
+
+
+#recipe-list {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.recipe-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.recipe-item h3 {
+    margin-bottom: 10px;
+}
+
+.recipe-actions {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px; /* Add space between recipe title and actions */
+}
+
+.recipe-actions li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.recipe-actions a {
+    text-decoration: none;
+    color: #333; /* Default color for links */
+    padding: 3px 8px; /* Padding around the link text */
+    border-radius: 3px; /* Rounded corners for links */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.recipe-actions a:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+.recipe-actions .edit-link {
+    background-color: #2196F3; /* Blue background for edit link */
+    color: white; /* White text color for edit link */
+}
+
+.recipe-actions .delete-link {
+    background-color: #f44336; /* Red background for delete link */
+    color: white; /* White text color for delete link */
+}
