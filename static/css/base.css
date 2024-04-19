@@ -10,6 +10,10 @@ body{
     background-color: #fff1f2;
 }
 
+.container{
+    text-align: center;
+}
+
 /* Style the navigation bar */
 nav {
     background-color: #fed9de;
@@ -43,6 +47,11 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     color: #fda4af;
 
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    color: #fda4af;
 }
 
 p {
@@ -90,3 +99,39 @@ footer {
 .dropdown-content a:hover {
     background-color: #ddd; 
 }
+
+
+
+* {
+    box-sizing: border-box;
+  }
+  .container {
+    width: 70%; /* Adjust as needed */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+/* Style the search field */
+form.example input[type=text] {
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: 110px;
+    font-size: 17px;
+    border: 2px solid #fda4af;
+    float: left;
+    width: 50%;
+    background: #fff1f2;
+    color: #fda4af;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    margin-top: 40px;
+    padding: 20px;
+    background: #fda4af;
+    color: #fff1f2;
+    font-size: 17px;
+    border: 2px solid #fda4af;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
