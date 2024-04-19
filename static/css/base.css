@@ -1,21 +1,22 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300&display=swap');
-
 /* Reset some default styles */
-body, ul, li, a {
+ul, li, a {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style-type: none;
     font-family: 'Roboto', sans-serif;
 }
+body{
+    background-color: #fff1f2;
+}
 
 /* Style the navigation bar */
 nav {
-    background-color: #333;
+    background-color: #fed9de;
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+    margin: -8px -8px -8px -8px;
 }
 
 nav ul {
@@ -29,7 +30,9 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fda4af;
+    font-size: large;
+    font-family: Rubik,sans-serif;
 }
 
 /* Style the main content */
@@ -38,21 +41,29 @@ h1 {
     text-align: center;
     margin-top: 2rem;
     font-family: 'Montserrat', sans-serif;
+    color: #fda4af;
+
 }
 
 p {
     font-size: 1.2rem;
     text-align: center;
     margin-top: 1rem;
+    color: #fda4af;
 }
 
 /* Style the footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #fed9de;
+    color: #fda4af;
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+    position: absolute; /* Position the footer at the bottom of the page */
+    bottom: 0;
+    width: 100%; /* Make the footer full width */
+    font-family: Rubik,sans-serif;
+    margin-left: -7px;
 }
 
 /* Style the dropdown menu */
@@ -79,4 +90,3 @@ footer {
 .dropdown-content a:hover {
     background-color: #ddd; 
 }
-
