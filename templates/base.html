@@ -39,16 +39,24 @@
 
   <div class="container">
 
-    <form class="example">
+    <!-- <form class="example">
+      <input type="text" placeholder="Enter an ingredient or dish name" name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form> -->
+
+    <form class="example" onsubmit="return false;">
       <input type="text" placeholder="Enter an ingredient or dish name" name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
+    
+    <!-- Container for displaying recipes -->
+    <div id="recipe-container"></div>
 
   </div>
 
 
 
     <footer>© 2024 Recipe Finder. All rights reserved.</footer>
-    <script src = "base.js"></script>
+    <script src = "/static/scripts/base.js"></script>
   </body>
 </html>
