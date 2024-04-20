@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
     <link rel="stylesheet" href="../../static/css/admin_add_recipe.css">
-    <link rel="stylesheet" href="../../static/css/base.css">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <h1>Add New Recipe</h1>
+        </div>
     <!-- Navigation Bar -->
-    <nav>
+    <nav id="navbar" class="navbar" class="navbar hidden">
         <ul>
-            <li><a href="base.html">Home</a></li>
+            <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
                 <a href="#" id="explore">Explore</a>
                 <div class="dropdown-content">
@@ -19,14 +23,20 @@
                     <a href="recipes_list.html">Recipes</a>
                 </div>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
+            <li class="dropdown">
+                <a href="#" id="profile-link">Profile</a>
+                  
+                  <div class="dropdown-content">
+                    <a href="user/log_in_user.html">Login as user</a>
+                    <a href="user/user_signup.html">Sign-up as user</a>
+                    <a href="admin/log_in_admin.html">Login as admin</a>
+                    <a href="admin/admin_signup.html">Sign-up as admin</a>
+                  </div>
                 </a>
             </li>
-
         </ul>
     </nav>
+    </header>
     <div class="container">
         <!-- <h1>Admin Dashboard</h1> -->
 
@@ -63,5 +73,6 @@
             <!-- Include fields to edit recipe details -->
         </div>
     </div>
+    <footer>Â© 2024 Recipe Finder. All rights reserved.</footer>
 </body>
 </html>
