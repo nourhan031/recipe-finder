@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/base.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
+    <script src="../../static/scripts/favorites.js"></script>
 </head>
 
 <body>
@@ -25,9 +26,11 @@
                     <span id="login-text">Profile</span>
                 </a>
             </li>
+            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
         </ul>
     </nav>
 <h1 id="classic-margherita-pizza">Classic Margherita Pizza</h1>
+<button id="favorite-button">Add to Favorites</button>
 <p><strong>Ingredients</strong></p>
 <ul>
 <li>Pizza dough</li>
@@ -41,5 +44,17 @@
 <p><strong>Directions</strong><br>
 Preheat oven to 475°F (245°C). Roll out pizza dough on a baking sheet. Spread tomato sauce over the dough. Tear fresh mozzarella into pieces and distribute evenly over the sauce. Tear fresh basil leaves and scatter them over the cheese. Drizzle olive oil over the pizza and sprinkle with salt and pepper. Bake for 10-12 minutes or until crust is golden brown and cheese is bubbly. Slice and serve.</p>
 </body>
+<script> 
+const recipeData = {
+    href: "margherita.html",
+    imagePath: "../../static/images/margherita.jpg",
+    imageAlt: "margherita",
+    recipeName: "margherita pizza" // Set the recipeName property here
+    };
 
+document.getElementById("favorite-button").addEventListener("click", function() {
+addToFavorites(recipeData);
+});
+</script>
+</html>
 

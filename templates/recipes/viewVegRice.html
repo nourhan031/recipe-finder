@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/base.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
+    <script src="../../static/scripts/favorites.js"></script>
 </head>
 
 <body>
@@ -25,10 +26,11 @@
                     <span id="login-text">Profile</span>
                 </a>
             </li>
+            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
         </ul>
     </nav>
 <h1>Vegetable Fried Rice</h1>
-
+<button id="favorite-button">Add to Favorites</button>
 <h2>Ingredients</h2>
 <ul>
     <li>3 tablespoons vegetable oil, divided</li>
@@ -50,4 +52,15 @@
     </ol>
 </p>
 </body>
+<script>  recipeData = {
+    href: "viewVegRice.html",
+    imagePath: "../../static/images/veg_rice.jpg",
+    imageAlt: "Veggie rice",
+    recipeName: "Veggie rice" // Set the recipeName property here
+    };
+
+document.getElementById("favorite-button").addEventListener("click", function() {
+addToFavorites(recipeData);
+});
+</script>
 </html>

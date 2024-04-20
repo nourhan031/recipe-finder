@@ -6,9 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/base.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
-    <style>
-        
-    </style>
+    <script src="../../static/scripts/favorites.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -27,9 +25,12 @@
                     <span id="login-text">Profile</span>
                 </a>
             </li>
+            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
         </ul>
+       
     </nav>
 <h1 id="chicken-stir-fry">Chicken Stir-Fry</h1>
+<button id="favorite-button">Add to Favorites</button>
 <p><strong>Ingredients</strong></p>
 <ul>
 <li>Chicken breast</li>
@@ -44,4 +45,17 @@
 </ul>
 <p><strong>Directions</strong><br>
 Cut chicken into bite-sized pieces and season with salt, pepper, and cornstarch. In a hot pan or wok, add sesame oil and cook chicken until browned. Remove chicken from the pan. In the same pan, add more oil if needed and sauté minced garlic and ginger. Add vegetables and stir-fry until tender. Return chicken to the pan, add soy sauce, and cook until everything is heated through.</p>
+<script> 
+  const recipeData = {
+        href: "chickenSf.html",
+        imagePath: "../../static/images/chicken.jpg",
+        imageAlt: "chicken stir fry",
+        recipeName: "Stir fry" // Set the recipeName property here
+        };
+
+    document.getElementById("favorite-button").addEventListener("click", function() {
+    addToFavorites(recipeData);
+    });
+</script>
 </body>
+</html>

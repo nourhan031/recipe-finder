@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/base.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
+    <script src="../../static/scripts/favorites.js"></script>
 </head>
 
 <body>
@@ -25,9 +26,11 @@
                     <span id="login-text">Profile</span>
                 </a>
             </li>
+            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
         </ul>
     </nav>
 <h1 id="garlic-bread">Cheesy Garlic Bread</h1>
+<button id="favorite-button">Add to Favorites</button>
 <p><strong>Ingredients</strong></p>
 <ul>
 <li>French bread</li>
@@ -46,3 +49,16 @@
     <li>Bake in the oven for 12-15 minutes until butter is melted and bubbly.</li>
 </ol>
 </body>
+<script>
+ const recipeData = {
+    href: "garlic_bread.html",
+    imagePath: "../../static/images/garlic_bread.jpg",
+    imageAlt: "garlic bread",
+    recipeName: "garlic bread" // Set the recipeName property here
+    };
+
+document.getElementById("favorite-button").addEventListener("click", function() {
+addToFavorites(recipeData);
+});
+</script>
+</html>

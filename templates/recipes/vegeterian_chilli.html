@@ -6,6 +6,7 @@
     <title>Vegetarian Chili</title>
     <link rel="stylesheet" href="../../static/css/base.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
+    <script src="../../static/scripts/favorites.js"></script>
 </head>
 
 <body>
@@ -25,10 +26,11 @@
                     <span id="login-text">Profile</span>
                 </a>
             </li>
+            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
         </ul>
     </nav>
     <h1>Vegetarian Chili</h1>
-
+    <button id="favorite-button">Add to Favorites</button>
     <h2>Ingredients</h2>
     <ul>
         <li>1 can (15 oz) black beans, drained and rinsed</li>
@@ -56,4 +58,16 @@
         </ol>
     </p>
 </body>
+<script>  
+     recipeData = {
+    href: "vegeterian_chilli.html",
+    imagePath: "../../static/images/vgchilli.jpg",
+    imageAlt: "vegeterian_chilli",
+    recipeName: "vegeterian chilli" // Set the recipeName property here
+    };
+
+document.getElementById("favorite-button").addEventListener("click", function() {
+addToFavorites(recipeData);
+});
+</script>
 </html>

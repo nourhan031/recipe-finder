@@ -7,6 +7,7 @@
     <title>Strawberry cake</title>
     <link rel="stylesheet" href="../../static/css/base.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
+    <script src="../../static/scripts/favorites.js"></script>
 </head>
 
 <body>
@@ -26,10 +27,11 @@
                     <span id="login-text">Profile</span>
                 </a>
             </li>
+            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
         </ul>
     </nav>
     <h1>Strawberry cake</h1>
-
+    <button id="favorite-button">Add to Favorites</button>
     <h2>Ingredients</h2>
     <ul>
         <li>2 cups white sugar</li>
@@ -59,5 +61,16 @@
     </ol>
     </p>
 </body>
+<script> 
+const recipeData = {
+    href: "Strawberry_cake.html",
+    imagePath: "../../static/images/straubrry-cake.jpg",
+    imageAlt: "strawberry cake",
+    recipeName: "strawberry cake" // Set the recipeName property here
+    };
 
+document.getElementById("favorite-button").addEventListener("click", function() {
+addToFavorites(recipeData);
+});
+</script>
 </html>
