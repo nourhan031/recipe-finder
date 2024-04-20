@@ -5,42 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/admin_dashboard.css">
-    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
 
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="base.html">Home</a></li>
+    <header>
+        <div class="logo">
+            <h1>Admin Dashboard</h1>
+        </div>
+    <nav id="navbar" class="navbar" class="navbar hidden">
+          <ul>
+            <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
-                <a href="#" id="explore">Explore</a>
+              <a href="#" id="explore">Explore</a>
+              <div class="dropdown-content">
+                <a href="recipes/categories.html">Categories</a>
+                <a href="recipes/recipes_list.html">Recipes</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" id="profile-link">Profile</a>
+                
                 <div class="dropdown-content">
-                    <a href="categories.html">Categories</a>
-                    <a href="recipes_list.html">Recipes</a>
+                  <a href="user/log_in_user.html">Login as user</a>
+                  <a href="user/user_signup.html">Sign-up as user</a>
+                  <a href="admin/log_in_admin.html">Login as admin</a>
+                  <a href="admin/admin_signup.html">Sign-up as admin</a>
                 </div>
+              </a>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
-                </a>
-            </li>
-
-        </ul>
-    </nav>
+          </ul>
+      </nav>
+    </header>
     <div class="container">
-        <h1>Admin Dashboard</h1>
-
         <!-- Button to Add New Recipe -->
         <a href="admin_add_recipe.html" class="add-recipe"><button>Add New Recipe</button></a>
 
-        <div id="recipe-list">
+        <div class="recipe-list">
             <h2>Uploaded Recipes</h2>
             <div class="recipe-grid">
                 <div class="recipe-item" id="peanut_butter">
                     <h3>No bake peanut butter treats</h3>
                     <ul class="recipe-actions">
-                        <li><a href="/templates/recipes/viewPB.html">View</a></li>
+                        <li><a href="viewPB.html">View</a></li>
                         <li><a href="edit_recipe.html">Edit</a></li>
                         <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li>
                     </ul>
@@ -64,7 +71,7 @@
                 <div class="recipe-item" id="pizza">
                     <h3>Classic Margherita Pizza</h3>
                     <ul class="recipe-actions">
-                        <li><a href="/templates/recipes/margherita.html">View</a></li>
+                        <li><a href="margherita.html">View</a></li>
                         <li><a href="edit_recipe.html">Edit</a></li>
                         <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li>
                     </ul>
@@ -77,5 +84,6 @@
             <!-- Include fields to edit recipe details -->
         </div>
     </div>
+    <footer>Â© 2024 Recipe Finder. All rights reserved.</footer>
     </body>
 </html>
