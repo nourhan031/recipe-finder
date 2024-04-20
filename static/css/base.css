@@ -1,85 +1,78 @@
-/* Reset some default styles */
-ul, li, a {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style-type: none;
-    font-family: 'Roboto', sans-serif;
-}
-body{
-    background-color: #fff1f2;
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../images/website_background2.jpeg);
+    background-size:  100vw 95vh; 
+    background-position: top;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
 }
 
-.container{
-    text-align: center;
-}
-
-/* Style the navigation bar */
-nav {
-    background-color: #fed9de;
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-    margin: -8px -8px -8px -8px;
-}
-
-nav ul {
+/* Header styles */
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-nav ul li {
-    margin: 0 1rem;
+
+.logo {
+    float: left;
+    padding: 20px 0;
+    margin-left: 20px;
+    }
+
+.logo h1 {
+    margin: 0;
 }
 
-nav ul li a {
-    color: #fda4af;
-    font-size: large;
-    font-family: Rubik,sans-serif;
+.navbar {
+    float: right;
+    margin-right: 60px;
+    margin-top: 20px;
+    align-items: center; 
+    justify-content: space-between;
+    background-color: transparent; 
 }
 
-/* Style the main content */
-h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 2rem;
-    font-family: 'Montserrat', sans-serif;
-    color: #fda4af;
-
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-h2{
-    font-family: 'Montserrat', sans-serif;
-    color: #fda4af;
+.navbar ul li {
+    display: inline-block;
+    margin-right: 20px;
 }
 
-p {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 1rem;
-    color: #fda4af;
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Style the footer */
-footer {
-    background-color: #fed9de;
-    color: #fda4af;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    position: fixed; /* Position the footer at the bottom of the page */
-    bottom: 0;
-    width: 100%; /* Make the footer full width */
-    font-family: Rubik,sans-serif;
-    margin-left: -7px;
+.navbar ul li a:hover {
+    background-color: #fda4af;
+    color: #000;
 }
 
-/* Style the dropdown menu */
+.navbar.hidden {
+    display: none;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #fde9de;
     min-width: 120px;
     z-index: 1;
 }
@@ -95,50 +88,62 @@ footer {
     display: block;
 }
 
-/* Style the dropdown options on hover */
 .dropdown-content a:hover {
     background-color: #ddd; 
 }
 
+.welcome{
+    margin-top: 50px;
+    width: auto; 
+    font-size: large;
+    color: #000; 
+    padding: 5rem 1rem 5rem 5rem;
+}
 
-
-* {
-    box-sizing: border-box;
-  }
-  .container {
-    width: 70%; /* Adjust as needed */
-    margin: 0 auto; /* Center the container horizontally */
-  }
-/* Style the search field */
+.container {
+    width: 50%; 
+    margin: 0; 
+}
 form.example input[type=text] {
     padding: 20px;
-    margin-top: 40px;
-    margin-left: 110px;
+    margin-top: 20px;
     font-size: 17px;
     border: 2px solid #fda4af;
     float: left;
     width: 50%;
-    background: #fff1f2;
+    background: #fde9de;
     color: #fda4af;
-  }
-  
-  /* Style the submit button */
-  form.example button {
+
+}
+input[type=text]::placeholder {
+    color: #4b5563;
+}
+
+form.example button {
     float: left;
     width: 20%;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 20px;
     background: #fda4af;
     color: #fff1f2;
     font-size: 17px;
     border: 2px solid #fda4af;
-    border-left: none; /* Prevent double borders */
+    border-left: none; 
     cursor: pointer;
-  }
+}
 
-
-
-/* Recipe Cards */
+footer {
+    background-color: #f5cac2;
+    color: #000;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    position: fixed; 
+    bottom: 0;
+    width: 100%; 
+    font-family: Rubik,sans-serif;
+    margin-left: -7px;
+}
 
 .recipe-card {
     width: 200px; 
@@ -161,4 +166,6 @@ form.example input[type=text] {
 .recipe-card h3 {
     font-size: 16px;
     margin: 0;
+    margin-bottom: 15px;
 }
+

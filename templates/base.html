@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Finder</title>
-    <link rel="stylesheet" href="../static/css/base.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    </style>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
   </head>
 
   <body>
-    
-<nav>
+<header>
+    <div class="logo">
+        <h1>Recipe Finder</h1>
+    </div>
+    <div id="hamburger-icon" class="hamburger-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+<nav id="navbar" class="navbar" class="navbar hidden">
       <ul>
         <li><a href="base.html">Home</a></li>
         <li class="dropdown">
@@ -21,8 +27,8 @@
           </div>
         </li>
         <li class="dropdown">
-          <a href="#" id="profile-link">
-            <span id="login-text">Profile</span>
+          <a href="#" id="profile-link">Profile</a>
+            
             <div class="dropdown-content">
               <a href="user/log_in_user.html">Login as user</a>
               <a href="user/user_signup.html">Sign-up as user</a>
@@ -33,30 +39,32 @@
         </li>
       </ul>
   </nav>
+</header>
 
-    <h1>Welcome to Recipe Finder</h1>
-    <p>Connect with other food enthusiasts and explore delicious recipes!</p>
+<div class="welcome">
+        <h1>Welcome to Recipe Finder</h1>
+        <p> Connect with other food 
+            enthusiasts and explore delicious recipes!
+        </p>  
 
-  <div class="container">
+        <div class="container">
 
-    <!-- <form class="example">
-      <input type="text" placeholder="Enter an ingredient or dish name" name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form> -->
-
-    <form class="example" onsubmit="return false;">
-      <input type="text" placeholder="Enter an ingredient or dish name" name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
     
-    <!-- Container for displaying recipes -->
-    <div id="recipe-container"></div>
 
-  </div>
-
-
-
+            <form class="example" onsubmit="return false;">
+              <input type="text" placeholder="Enter an ingredient or dish name" name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            
+         
+            <div id="recipe-container"></div>
+        
+        </div>
+</div>
+    
     <footer>© 2024 Recipe Finder. All rights reserved.</footer>
-    <script src = "/static/scripts/base.js"></script>
+
+    <script src = "/static/scripts/base.js"></script> 
+    
   </body>
 </html>
