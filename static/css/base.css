@@ -72,7 +72,7 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fde9de;
+    background-color: #fedade;
     min-width: 120px;
     z-index: 1;
 }

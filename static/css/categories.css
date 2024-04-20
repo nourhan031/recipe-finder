@@ -1,4 +1,8 @@
 /* Style the categories */
+body{
+    background-color: #fff0f2;
+}
+
 .category {
     display: inline-block;
     margin: 20px;

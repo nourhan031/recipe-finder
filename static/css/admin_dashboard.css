@@ -14,7 +14,9 @@ h1{
 }
 
 .add-recipe > button{
-    background-color: #fda4af;
+    background-color: #fad6db;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
     font-size: large;
     border: none;
     padding: 10px 20px;
@@ -23,7 +25,7 @@ h1{
 }
 
 .add-recipe>button:hover {
-    background-color: #EDCCD1;
+    background-color: #fda4af;
 }
 
 .recipe-list {
@@ -105,7 +107,7 @@ h1{
 }
 
 .recipe-actions a:hover {
-    background-color: #f0f0f0; 
+    background-color: #fda4af; 
 }
 
 .recipe-actions .edit-link {

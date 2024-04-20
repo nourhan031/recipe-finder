@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uploaded Recipes</title>
     <link rel="stylesheet" href="../../static/css/categories.css">
-    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
 </head>
 
 <body>
+    <header>
+        <div class="logo">
+            <h1>Uploaded Recipes</h1>
+        </div>
     <!-- Navigation Bar -->
-    <nav>
+    <nav id="navbar" class="navbar" class="navbar hidden">
         <ul>
             <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
@@ -21,16 +25,21 @@
                     <a href="recipes_list.html">Recipes</a>
                 </div>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
+            <li class="dropdown">
+                <a href="#" id="profile-link">Profile</a>
+                  
+                  <div class="dropdown-content">
+                    <a href="user/log_in_user.html">Login as user</a>
+                    <a href="user/user_signup.html">Sign-up as user</a>
+                    <a href="admin/log_in_admin.html">Login as admin</a>
+                    <a href="admin/admin_signup.html">Sign-up as admin</a>
+                  </div>
                 </a>
             </li>
             <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
         </ul>
     </nav>
-
-    <h1>Uploaded Recipes</h1>
+    </header>
 
     <div class="category">
         <a href="garlic_bread.html">
@@ -91,7 +100,6 @@
             <div class="caption">Chicken Stir Fry</div>
         </a>
     </div>
-
+    <footer>Â© 2024 Recipe Finder. All rights reserved.</footer>
 </body>
-
 </html>
