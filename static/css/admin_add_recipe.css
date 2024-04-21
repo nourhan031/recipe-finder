@@ -41,12 +41,12 @@ nav {
     padding: 8px;
     resize: none;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid #fda4af;
     box-sizing: border-box; 
 }
 
 #add-recipe button[type="submit"] {
-    background-color: #fff0f2;
+    background-color: #fda4af;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     color: black;
