@@ -21,6 +21,11 @@
         border-bottom: none;
         }
   </style>
+  <script>
+    if (!localStorage.getItem("loggedUser") || localStorage.getItem("loggedUser") === "false") {
+      window.location.href = "login.html";
+    }
+  </script>
 </head>
 <body>
   <header>

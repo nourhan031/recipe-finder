@@ -6,7 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/admin_dashboard.css">
     <link rel="stylesheet" href="../../static/css/nav_bar.css">
-
+    <script>
+        // Check if the user is logged in by checking the value of loggedAdmin in local storage
+        if (!localStorage.getItem("loggedAdmin") || localStorage.getItem("loggedAdmin") === "false") {
+          // If the user is not logged in, redirect them to the login page
+          window.location.href = "login.html";
+        }
+      </script>
 </head>
 <body>
     <header>
