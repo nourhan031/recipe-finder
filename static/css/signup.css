@@ -3,15 +3,16 @@ body {
 }
 
 .form-frame {
+  margin: 0 auto 70px auto;
+  background-color: #fde2e2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   justify-content: center;
   max-width: 500px;
   margin: 2rem auto;
   margin-top: 50px;
-  background-color: #fde9de;
-  border: 1px solid #fda4af;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 100px;
 }
 
