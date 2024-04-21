@@ -1,28 +1,4 @@
-
-
-window.onload = function() {
-  // Get the favorites from local storage
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  // Create a list of favorites
-  const favoritesList = document.getElementById("favorites-container");
-  if (favoritesList && favorites) {
-    favorites.forEach((recipeData) => {
-      if(recipeData){
-        if (recipeData.href && recipeData.href !== '') {
-        const favoriteDiv = createFavoriteElement(recipeData);
-        favoritesList.appendChild(favoriteDiv);
-      }
-      }
-    });
-  }
-}
-
-function addToRecipes(recipeData) {
-  if(!logged_in_user){
-    alert("log in first!!");
-    window.location.href = "/templates/authenticate/login.html";
-    return;
-  }
+function addToFavorites(recipeData) {
   // Get the favorites from local storage
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -48,7 +24,7 @@ function addToRecipes(recipeData) {
     favoriteDiv.classList.add('category');
   
     const favoriteLink = document.createElement('a');
-    favoriteLink.href = 'recipe.html';
+    favoriteLink.href = recipeData.href;
   
     const favoriteImage = document.createElement('img');
     favoriteImage.src = recipeData.imagePath;
@@ -57,9 +33,11 @@ function addToRecipes(recipeData) {
     const favoriteCaption = document.createElement('div');
     favoriteCaption.classList.add('caption');
     favoriteCaption.textContent = recipeData.recipeName;
+  
     favoriteLink.appendChild(favoriteImage);
     favoriteLink.appendChild(favoriteCaption);
     favoriteDiv.appendChild(favoriteLink);
+  
     return favoriteDiv;
   }
 

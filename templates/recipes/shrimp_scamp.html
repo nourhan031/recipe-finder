@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrimp Scampi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/css/recipe.css">
+    <script src="../../static/scripts/favorites.js"></script>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Shrimp Scampi</h1>
+        </div>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar" class="navbar hidden">
+        <ul>
+            <li><a href="/templates/base.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" id="explore">Explore</a>
+              <div class="dropdown-content">
+                <a href="/templates/recipes/categories.html">Categories</a>
+                <a href="/templates/recipes/recipes_list.html">Recipes</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" id="profile-link">Profile</a>
+    
+              <div class="dropdown-content">
+                <a href="/templates/authenticate/login.html">Login</a>
+                <a href="/templates/authenticate/signup.html">Sign-up</a>
+            
+              </div>
+              </a>
+            </li>
+            <li> <a href="favorites.html">Favorites</a> </li>
+        </ul>
+    </nav>
+    </header>
+    <button id="favorite-button" >Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i></button>
+    <h2>Ingredients</h2>
+
+    <div class="ingredients-ul">
+        <ul>
+            <li>1 pound shrimp, peeled and deveined</li>
+            <li>4 cloves garlic, minced</li>
+            <li>1/4 cup white wine</li>
+            <li>2 tablespoons lemon juice</li>
+            <li>1/4 cup butter</li>
+            <li>2 tablespoons olive oil</li>
+            <li>Salt and pepper to taste</li>
+            <li>Chopped fresh parsley for garnish</li>
+            <li>Cooked pasta for serving</li>
+        </ul>
+    </div>
+    
+
+    <h2>Directions</h2>
+
+    <div  class="ingredients-ol">
+        <ol>
+            <li>In a large skillet, heat olive oil and butter over medium heat.</li>
+            <li>Add minced garlic and cook until fragrant.</li>
+            <li>Add shrimp and cook until pink and opaque.</li>
+            <li>Deglaze the pan with white wine and lemon juice.</li>
+            <li>Season with salt and pepper to taste.</li>
+            <li>Serve hot over cooked pasta, garnished with chopped parsley.</li>
+        </ol>
+    </div>
+    
+    <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+</body>
+<script> 
+const recipeData = {
+    href: "shrimp_scamp.html",
+    imagePath: "../../static/images/scampi.jpg",
+    imageAlt: "shrimp scampi",
+    recipeName: "shrimp scampi" // Set the recipeName property here
+    };
+
+document.getElementById("favorite-button").addEventListener("click", function() {
+addToFavorites(recipeData);
+});
+</script>
+</html>
