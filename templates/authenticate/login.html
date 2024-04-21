@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login_user</title>
+    <link rel="stylesheet" href="../../static/css/login.css" />
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
+    <script src="../../static/scripts/authenticate.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <div class="logo">
+        <h1>Login</h1>
+      </div>
+      <nav id="navbar" class="navbar" class="navbar hidden">
+        <ul>
+          <li><a href="/templates/base.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" id="explore">Explore</a>
+            <div class="dropdown-content">
+              <a href="/templates/recipes/categories.html">Categories</a>
+              <a href="/templates/recipes/recipes_list.html">Recipes</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" id="profile-link">Profile</a>
+  
+            <div class="dropdown-content">
+              <a href="/templates/authenticate/login.html">Login</a>
+              <a href="/templates/authenticate/signup.html">Sign-up</a>
+          
+            </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="form-frame">
+      <form action="#" method="POST" onsubmit="return login_redirect()">
+        <div>
+          <label for="username">Username:</label>
+          <br />
+          <input type="text" id="username" name="username" required />
+        </div>
+        <br />
+        <div>
+          <label for="password">Password:</label>
+          <br />
+          <input type="password" id="password" name="password" required />
+        </div>
+        <br />
+        <label for="role">Choose Role:</label><br />
+        <select id="role" name="role">
+          <option value="user">User</option>
+          <option value="admin">Admin</option></select
+        ><br /><br />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  </body>
+
+  <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+</html>
