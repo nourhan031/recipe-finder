@@ -19,9 +19,9 @@ window.onload = function() {
   }
   const recipesContainer = document.getElementById('recipes-container');
   recipesContainer.addEventListener('click', function(event) {
-    if (event.target.classList.contains('recipe')) {
-      const recipeName = event.target.dataset.recipeName;
-      handleRecipeClick(recipeName);
+    if (event.target.tagName === 'DIV') {
+      const recipeId = event.target.id;
+      handleRecipeClick(recipeId);
     }
   });
   
