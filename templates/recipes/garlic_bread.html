@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../static/css/base.css">
+    <title>Cheesy Garlic Bread</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
     <script src="../../static/scripts/favorites.js"></script>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
 </head>
 
 <body>
+    <header>
+        <div class="logo">
+            <h1 id="garlic-bread">Cheesy Garlic Bread</h1>
+        </div>
     <!-- Navigation Bar -->
-    <nav>
+    <nav id="navbar" class="navbar" class="navbar hidden">
         <ul>
             <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
@@ -21,33 +26,49 @@
                     <a href="recipes_list.html">Recipes</a>
                 </div>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
+            <li class="dropdown">
+                <a href="#" id="profile-link">Profile</a>
+                  
+                  <div class="dropdown-content">
+                    <a href="user/log_in_user.html">Login as user</a>
+                    <a href="user/user_signup.html">Sign-up as user</a>
+                    <a href="admin/log_in_admin.html">Login as admin</a>
+                    <a href="admin/admin_signup.html">Sign-up as admin</a>
+                  </div>
                 </a>
             </li>
-            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
+            <li> <a href="favorites.html">Favorites</a> </li>
         </ul>
     </nav>
-<h1 id="garlic-bread">Cheesy Garlic Bread</h1>
-<button id="favorite-button">Add to Favorites</button>
-<p><strong>Ingredients</strong></p>
-<ul>
-<li>French bread</li>
-<li>Butter</li>
-<li>Garlic powder</li>
-<li>Garlic cloves</li>
-<li>Italian seasoning</li>
-<li>Mozzarella cheese</li>
-<li>Parsley</li>
-</ul>
-<p><strong>Directions</strong><br>
-<ol>
-    <li>Preheat oven to 400 degrees. Cut your French bread loaf lengthwise and place on top of a baking sheet.</li>
-    <li>In a small bowl combine softened butter, garlic powder, minced garlic, Italian seasoning and shredded cheese.</li>
-    <li>Spread evenly on each side of the garlic bread.  Top with Colby and mozzarella cheese.</li>
-    <li>Bake in the oven for 12-15 minutes until butter is melted and bubbly.</li>
-</ol>
+    </header>
+
+    <button id="favorite-button" >Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i></button>
+    <h2>Ingredients</h2>
+
+    <div class="ingredients-ul">
+        <ul>
+            <li>French bread</li>
+            <li>Butter</li>
+            <li>Garlic powder</li>
+            <li>Garlic cloves</li>
+            <li>Italian seasoning</li>
+            <li>Mozzarella cheese</li>
+            <li>Parsley</li>
+            </ul>
+    </div>
+
+    <h2>Directions</h2>
+
+    <div class="ingredients-ol">
+        <ol>
+            <li>Preheat oven to 400 degrees. Cut your French bread loaf lengthwise and place on top of a baking sheet.</li>
+            <li>In a small bowl combine softened butter, garlic powder, minced garlic, Italian seasoning and shredded cheese.</li>
+            <li>Spread evenly on each side of the garlic bread.  Top with Colby and mozzarella cheese.</li>
+            <li>Bake in the oven for 12-15 minutes until butter is melted and bubbly.</li>
+        </ol>
+    </div>
+
+<footer>© 2024 Recipe Finder. All rights reserved.</footer>
 </body>
 <script>
  const recipeData = {

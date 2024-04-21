@@ -1,50 +1,35 @@
-/* Internal CSS for styling */
 body {
-    font-family: Arial, sans-serif; /* Setting the font family for the entire document */
-    margin: 0; /* Resetting margin */
-    padding: 0; /* Resetting padding */
-    background-color: #f8f8f8; /* Setting background color */
-}
-
-.container {
-    max-width: 800px; /* Setting maximum width for content */
-    margin: 0 auto; /* Centering the container horizontally */
-    padding: 20px; /* Adding padding to the container */
-    box-sizing: border-box; /* Including padding in the width calculation */
-    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f2;
 }
 
 h2 {
-    color: #333; /* Changing color of the heading */
-    text-align: center; /* Centering the heading */
-    margin-top: 20px; /* Adding margin on top */
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
 }
 
-p {
-    color: #666; /* Changing color of paragraphs */
-    margin-bottom: 10px; /* Adding margin at the bottom of paragraphs */
-    padding-left: 200px;
-    padding-right: 200px; /* Adding padding to paragraphs */
+.ingredients-ul,
+.ingredients-ol {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
 }
 
-strong {
-    font-weight: bold; /* Making strong elements bold */
+
+.ingredients-ul li,
+.ingredients-ol li {
+    margin-bottom: 5px;
+    padding: 10px;
+
 }
 
-ul {
-    list-style-type: none; /* Removing default bullet points from lists */
-    padding-left: 0; /* Removing default padding from lists */
-    display: flex; /* Adding display: flex; */
-    justify-content: center; /* Adding justify-content: center; */
-}
-
-li {
-    margin-bottom: 5px; /* Adding margin between list items */
-    padding-left: 100px;
-    padding-right: 100px; 
-    
+.ingredients-ol {
+    margin-bottom: 5rem;
 }
 
 #favorite-button {
@@ -52,9 +37,14 @@ li {
     margin: 1rem auto;
     padding: 0.5rem 1rem;
     border: none;
-    border-radius: 0.25rem;
-    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: #fad6db;
     color: black;
     font-size: 1rem;
     cursor: pointer;
-  }
+}
+
+#favorite-button:hover{
+    background-color: #fda4af;
+}

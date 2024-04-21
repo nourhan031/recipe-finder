@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../static/css/base.css">
+    <title>Classic Margherita Pizza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
     <script src="../../static/scripts/favorites.js"></script>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
 </head>
 
 <body>
+    <header>
+        <div class="logo">
+            <h1 id="classic-margherita-pizza">Classic Margherita Pizza</h1>
+        </div>
     <!-- Navigation Bar -->
-    <nav>
+    <nav id="navbar" class="navbar" class="navbar hidden">
         <ul>
             <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
@@ -21,28 +26,52 @@
                     <a href="recipes_list.html">Recipes</a>
                 </div>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
+            <li class="dropdown">
+                <a href="#" id="profile-link">Profile</a>
+                  
+                  <div class="dropdown-content">
+                    <a href="user/log_in_user.html">Login as user</a>
+                    <a href="user/user_signup.html">Sign-up as user</a>
+                    <a href="admin/log_in_admin.html">Login as admin</a>
+                    <a href="admin/admin_signup.html">Sign-up as admin</a>
+                  </div>
                 </a>
             </li>
-            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
+            <li> <a href="favorites.html">Favorites</a> </li>
         </ul>
     </nav>
-<h1 id="classic-margherita-pizza">Classic Margherita Pizza</h1>
-<button id="favorite-button">Add to Favorites</button>
-<p><strong>Ingredients</strong></p>
-<ul>
-<li>Pizza dough</li>
-<li>tomato sauce</li>
-<li>fresh mozzarella cheese</li>
-<li>fresh basil leaves</li>
-<li>olive oil</li>
-<li>salt</li>
-<li>pepper</li>
-</ul>
-<p><strong>Directions</strong><br>
-Preheat oven to 475°F (245°C). Roll out pizza dough on a baking sheet. Spread tomato sauce over the dough. Tear fresh mozzarella into pieces and distribute evenly over the sauce. Tear fresh basil leaves and scatter them over the cheese. Drizzle olive oil over the pizza and sprinkle with salt and pepper. Bake for 10-12 minutes or until crust is golden brown and cheese is bubbly. Slice and serve.</p>
+    </header>
+    <button id="favorite-button" >Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i></button>
+    <h2>Ingredients</h2>
+
+    <div class="ingredients-ul">
+        <ul>
+            <li>Pizza dough</li>
+            <li>tomato sauce</li>
+            <li>fresh mozzarella cheese</li>
+            <li>fresh basil leaves</li>
+            <li>olive oil</li>
+            <li>salt</li>
+            <li>pepper</li>
+            </ul>
+    </div>
+
+    <h2>Directions</h2>
+
+    <div class="ingredients-ol">
+        <ol>
+            <li>Preheat oven to 475°F (245°C).</li>
+            <li>Roll out pizza dough on a baking sheet.</li>
+            <li>Spread tomato sauce over the dough.</li>
+            <li>Tear fresh mozzarella into pieces and distribute evenly over the sauce.</li>
+            <li>Tear fresh basil leaves and scatter them over the cheese.</li>
+            <li>Drizzle olive oil over the pizza and sprinkle with salt and pepper.</li>
+            <li> Bake for 10-12 minutes or until crust is golden brown and cheese is bubbly.</li>
+            <li> Slice and serve.</li>
+        </ol>
+    </div>
+
+<footer>© 2024 Recipe Finder. All rights reserved.</footer>
 </body>
 <script> 
 const recipeData = {

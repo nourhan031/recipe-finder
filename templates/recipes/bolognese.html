@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Spaghetti Bolognese</title>
-    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
     <script src="../../static/scripts/favorites.js"></script>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
 </head>
-
 <body>
+    <header>
+        <div class="logo">
+            <h1>Classic Spaghetti Bolognese</h1>
+        </div>
     <!-- Navigation Bar -->
-    <nav>
+    <nav id="navbar" class="navbar" class="navbar hidden">
         <ul>
             <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
@@ -21,33 +25,42 @@
                     <a href="recipes_list.html">Recipes</a>
                 </div>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
+            <li class="dropdown">
+                <a href="#" id="profile-link">Profile</a>
+                  
+                  <div class="dropdown-content">
+                    <a href="user/log_in_user.html">Login as user</a>
+                    <a href="user/user_signup.html">Sign-up as user</a>
+                    <a href="admin/log_in_admin.html">Login as admin</a>
+                    <a href="admin/admin_signup.html">Sign-up as admin</a>
+                  </div>
                 </a>
             </li>
-            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
+            <li> <a href="favorites.html">Favorites</a> </li>
         </ul>
     </nav>
-    <h1>Classic Spaghetti Bolognese</h1>
-    <button id="favorite-button">Add to Favorites</button>
+    </header>
+    
+    <button id="favorite-button">Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i></button>
     <h2>Ingredients</h2>
-    <ul>
-        <li>1 pound ground beef</li>
-        <li>1 onion, chopped</li>
-        <li>2 cloves garlic, minced</li>
-        <li>1 carrot, diced</li>
-        <li>1 celery stalk, diced</li>
-        <li>1 can (14 oz) crushed tomatoes</li>
-        <li>1/2 cup beef broth</li>
-        <li>1 tablespoon tomato paste</li>
-        <li>1 teaspoon dried oregano</li>
-        <li>Salt and pepper to taste</li>
-        <li>Cooked spaghetti for serving</li>
-    </ul>
+    <div class="ingredients-ul">
+        <ul>
+            <li>1 pound ground beef</li>
+            <li>1 onion, chopped</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 carrot, diced</li>
+            <li>1 celery stalk, diced</li>
+            <li>1 can (14 oz) crushed tomatoes</li>
+            <li>1/2 cup beef broth</li>
+            <li>1 tablespoon tomato paste</li>
+            <li>1 teaspoon dried oregano</li>
+            <li>Salt and pepper to taste</li>
+            <li>Cooked spaghetti for serving</li>
+        </ul>
+    </div>
 
     <h2>Directions</h2>
-    <p>
+    <div class="ingredients-ol">
         <ol>
             <li>In a large skillet, brown ground beef over medium heat.</li>
             <li>Add chopped onion, minced garlic, diced carrot, and diced celery. Cook until vegetables are softened.</li>
@@ -55,18 +68,21 @@
             <li>Season with salt and pepper to taste. Simmer for 20-30 minutes.</li>
             <li>Serve hot over cooked spaghetti.</li>
         </ol>
-    </p>
-    <script>
-     const recipeData = {
-        href: "bolognese.html",
-        imagePath: "../../static/images/bolognese.jpg",
-        imageAlt: "bolognese",
-        recipeName: "Spaghetti Bolognese" // Set the recipeName property here
-        };
+    </div>
+    
+     <footer>© 2024 Recipe Finder. All rights reserved.</footer>
 
-        document.getElementById("favorite-button").addEventListener("click", function() {
-        addToFavorites(recipeData);
-        });
-    </script>
 </body>
+<script>
+    const recipeData = {
+       href: "bolognese.html",
+       imagePath: "../../static/images/bolognese.jpg",
+       imageAlt: "bolognese",
+       recipeName: "Spaghetti Bolognese" // Set the recipeName property here
+       };
+
+       document.getElementById("favorite-button").addEventListener("click", function() {
+       addToFavorites(recipeData);
+       });
+   </script>
 </html>

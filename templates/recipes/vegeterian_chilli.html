@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vegetarian Chili</title>
-    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
     <script src="../../static/scripts/favorites.js"></script>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
 </head>
 
 <body>
+    <header>
+        <div class="logo">
+            <h1>Vegetarian Chili</h1>
+        </div>
     <!-- Navigation Bar -->
-    <nav>
+    <nav id="navbar" class="navbar" class="navbar hidden">
         <ul>
             <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
@@ -21,32 +26,42 @@
                     <a href="recipes_list.html">Recipes</a>
                 </div>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
+            <li class="dropdown">
+                <a href="#" id="profile-link">Profile</a>
+                  
+                  <div class="dropdown-content">
+                    <a href="user/log_in_user.html">Login as user</a>
+                    <a href="user/user_signup.html">Sign-up as user</a>
+                    <a href="admin/log_in_admin.html">Login as admin</a>
+                    <a href="admin/admin_signup.html">Sign-up as admin</a>
+                  </div>
                 </a>
             </li>
-            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
+            <li> <a href="favorites.html">Favorites</a> </li>
         </ul>
     </nav>
-    <h1>Vegetarian Chili</h1>
-    <button id="favorite-button">Add to Favorites</button>
+    </header>
+    <button id="favorite-button" >Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i></button>
     <h2>Ingredients</h2>
-    <ul>
-        <li>1 can (15 oz) black beans, drained and rinsed</li>
-        <li>1 can (15 oz) kidney beans, drained and rinsed</li>
-        <li>1 can (15 oz) corn kernels, drained</li>
-        <li>1 can (15 oz) diced tomatoes</li>
-        <li>1 onion, chopped</li>
-        <li>1 bell pepper, chopped</li>
-        <li>2 cloves garlic, minced</li>
-        <li>1 tablespoon chili powder</li>
-        <li>1 teaspoon cumin</li>
-        <li>Salt and pepper to taste</li>
-    </ul>
+    
+    <div class="ingredients-ul">
+        <ul>
+            <li>1 can (15 oz) black beans, drained and rinsed</li>
+            <li>1 can (15 oz) kidney beans, drained and rinsed</li>
+            <li>1 can (15 oz) corn kernels, drained</li>
+            <li>1 can (15 oz) diced tomatoes</li>
+            <li>1 onion, chopped</li>
+            <li>1 bell pepper, chopped</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 tablespoon chili powder</li>
+            <li>1 teaspoon cumin</li>
+            <li>Salt and pepper to taste</li>
+        </ul>
+    </div>
 
     <h2>Directions</h2>
-    <p>
+
+    <div class="ingredients-ol">
         <ol>
             <li>In a large pot, heat olive oil over medium heat.</li>
             <li>Add chopped onion, bell pepper, and garlic. Cook until softened.</li>
@@ -56,7 +71,9 @@
             <li>Simmer for 20-30 minutes, stirring occasionally.</li>
             <li>Serve hot, garnished with chopped cilantro or shredded cheese.</li>
         </ol>
-    </p>
+    </div>
+
+    <footer>Â© 2024 Recipe Finder. All rights reserved.</footer>
 </body>
 <script>  
      recipeData = {

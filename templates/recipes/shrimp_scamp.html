@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shrimp Scampi</title>
-    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
     <script src="../../static/scripts/favorites.js"></script>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
 </head>
 
 <body>
+    <header>
+        <div class="logo">
+            <h1>Shrimp Scampi</h1>
+        </div>
     <!-- Navigation Bar -->
-    <nav>
+    <nav id="navbar" class="navbar" class="navbar hidden">
         <ul>
             <li><a href="../base.html">Home</a></li>
             <li class="dropdown">
@@ -21,31 +26,42 @@
                     <a href="recipes_list.html">Recipes</a>
                 </div>
             </li>
-            <li>
-                <a href="../user/log_in_user.html" id="profile-link">
-                    <span id="login-text">Profile</span>
+            <li class="dropdown">
+                <a href="#" id="profile-link">Profile</a>
+                  
+                  <div class="dropdown-content">
+                    <a href="user/log_in_user.html">Login as user</a>
+                    <a href="user/user_signup.html">Sign-up as user</a>
+                    <a href="admin/log_in_admin.html">Login as admin</a>
+                    <a href="admin/admin_signup.html">Sign-up as admin</a>
+                  </div>
                 </a>
             </li>
-            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
+            <li> <a href="favorites.html">Favorites</a> </li>
         </ul>
     </nav>
-    <h1>Shrimp Scampi</h1>
-    <button id="favorite-button">Add to Favorites</button>
+    </header>
+    <button id="favorite-button" >Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i></button>
     <h2>Ingredients</h2>
-    <ul>
-        <li>1 pound shrimp, peeled and deveined</li>
-        <li>4 cloves garlic, minced</li>
-        <li>1/4 cup white wine</li>
-        <li>2 tablespoons lemon juice</li>
-        <li>1/4 cup butter</li>
-        <li>2 tablespoons olive oil</li>
-        <li>Salt and pepper to taste</li>
-        <li>Chopped fresh parsley for garnish</li>
-        <li>Cooked pasta for serving</li>
-    </ul>
+
+    <div class="ingredients-ul">
+        <ul>
+            <li>1 pound shrimp, peeled and deveined</li>
+            <li>4 cloves garlic, minced</li>
+            <li>1/4 cup white wine</li>
+            <li>2 tablespoons lemon juice</li>
+            <li>1/4 cup butter</li>
+            <li>2 tablespoons olive oil</li>
+            <li>Salt and pepper to taste</li>
+            <li>Chopped fresh parsley for garnish</li>
+            <li>Cooked pasta for serving</li>
+        </ul>
+    </div>
+    
 
     <h2>Directions</h2>
-    <p>
+
+    <div  class="ingredients-ol">
         <ol>
             <li>In a large skillet, heat olive oil and butter over medium heat.</li>
             <li>Add minced garlic and cook until fragrant.</li>
@@ -54,7 +70,9 @@
             <li>Season with salt and pepper to taste.</li>
             <li>Serve hot over cooked pasta, garnished with chopped parsley.</li>
         </ol>
-    </p>
+    </div>
+    
+    <footer>© 2024 Recipe Finder. All rights reserved.</footer>
 </body>
 <script> 
 const recipeData = {
