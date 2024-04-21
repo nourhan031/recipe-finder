@@ -48,7 +48,7 @@ function addToRecipes(recipeData) {
     favoriteDiv.classList.add('category');
   
     const favoriteLink = document.createElement('a');
-    favoriteLink.href = recipeData.href;
+    favoriteLink.href = 'recipe.html';
   
     const favoriteImage = document.createElement('img');
     favoriteImage.src = recipeData.imagePath;
