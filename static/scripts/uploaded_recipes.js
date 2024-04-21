@@ -18,43 +18,16 @@ window.onload = function() {
     }
   }
   const recipesContainer = document.getElementById('recipes-container');
-
   recipesContainer.addEventListener('click', function(event) {
-    // Check if the clicked element is a recipe div
     if (event.target.classList.contains('recipe')) {
-      // Get the recipe name from the data attribute
       const recipeName = event.target.dataset.recipeName;
-      
-      // Call a function with the recipe name as a parameter
       handleRecipeClick(recipeName);
     }
   });
-  // //to be used in admin dashboard
-  // function addToRecipes(recipeData) {
-  //   if(!logged_in_admin){
-  //     alert("log in as admin first!!");
-  //     window.location.href = "/templates/authenticate/login.html";
-  //     return;
-  //   }
-  //   // Get the favorites from local storage
-  //   const favorites = JSON.parse(localStorage.getItem("recipes")) || [];
   
-  //   // Check if the favorites array already contains the recipe data
-  //   const index = favorites.findIndex(
-  //     (favorite) => favorite.recipeName === recipeData.recipeName
-  //   );
-  
-  //   // If the recipe data is not already in the favorites array, add it
-  //   if (index === -1) {
-  //     favorites.push(recipeData);
-  //     localStorage.setItem("recipes", JSON.stringify(favorites));
-  //     createrecipeElement(recipeData);
-  //   }
-  // }
   
 function createrecipeElement(recipeData) {
       if (!recipeData.href || recipeData.href === '') {
-          // console.error('Invalid href property in recipeData:', recipeData);
           return;
         }
       const recipeDiv = document.createElement('div');
@@ -76,4 +49,3 @@ function createrecipeElement(recipeData) {
       return recipeDiv;
 }
   
-  // This function will be called when the favorite button is clicked on the recipe page

@@ -50,30 +50,30 @@
     <footer>© 2024 Recipe Finder. All rights reserved.</footer>
     <script>
       // Recipe data
-      const recipeData = {
-        recipeName: "Spaghetti Bolognese",
-        ingredients: [
-          "1 pound ground beef",
-          "1 onion, chopped",
-          "2 cloves garlic, minced",
-          "1 carrot, diced",
-          "1 celery stalk, diced",
-          "1 can (14 oz) crushed tomatoes",
-          "1/2 cup beef broth",
-          "1 tablespoon tomato paste",
-          "1 teaspoon dried oregano",
-          "Salt and pepper to taste",
-          "Cooked spaghetti for serving",
-        ],
-        directions: [
-          "In a large skillet, brown ground beef over medium heat.",
-          "Add chopped onion, minced garlic, diced carrot, and diced celery. Cook until vegetables are softened.",
-          "Add crushed tomatoes, beef broth, tomato paste, and dried oregano.",
-          "Season with salt and pepper to taste. Simmer for 20-30 minutes.",
-          "Serve hot over cooked spaghetti.",
-        ],
-      };
-
+      // const recipeData = {
+      //   recipeName: "Spaghetti Bolognese",
+      //   ingredients: [
+      //     "1 pound ground beef",
+      //     "1 onion, chopped",
+      //     "2 cloves garlic, minced",
+      //     "1 carrot, diced",
+      //     "1 celery stalk, diced",
+      //     "1 can (14 oz) crushed tomatoes",
+      //     "1/2 cup beef broth",
+      //     "1 tablespoon tomato paste",
+      //     "1 teaspoon dried oregano",
+      //     "Salt and pepper to taste",
+      //     "Cooked spaghetti for serving",
+      //   ],
+      //   directions: [
+      //     "In a large skillet, brown ground beef over medium heat.",
+      //     "Add chopped onion, minced garlic, diced carrot, and diced celery. Cook until vegetables are softened.",
+      //     "Add crushed tomatoes, beef broth, tomato paste, and dried oregano.",
+      //     "Season with salt and pepper to taste. Simmer for 20-30 minutes.",
+      //     "Serve hot over cooked spaghetti.",
+      //   ],
+      // };
+      const recipeData = localStorage.getItem('current');
       // Set recipe name
       document.getElementById("recipe-name").textContent = recipeData.recipeName;
 
