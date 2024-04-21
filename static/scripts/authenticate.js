@@ -12,13 +12,12 @@ function signup_redirect() {
 
   if (role === "admin") {
     logged_in_admin = true;
-    localStorage.setItem("loggedAdmin", logged_in_admin);
+    localStorage.setItem("loggedAdmin", true);
     localStorage.setItem("loggedUser", false);
     window.location.href = "/templates/admin/admin_dashboard.html";
   } else {
-    logged_in_user = true;
-    localStorage.setItem("loggedUser", logged_in_admin);
-    localStorage.setItem("loggedAdmin", false);
+    localStorage.setItem("loggedUser", true);
+    localStorage.setItem("loggedAdmin", false);  
     window.location.href = "/templates/base.html";
   }
   return false;
@@ -26,14 +25,15 @@ function signup_redirect() {
 
 function login_redirect() {
   let username = document.getElementById("username").value;
+  let role = document.getElementById("role").value;
   alert("welcome " + username + "!");
   if (role === "admin") {
-    logged_in_admin = true;
-    localStorage.setItem("loggedAdmin", logged_in_admin);
+    localStorage.setItem("loggedAdmin", true);
+    localStorage.setItem("loggedUser", false);
     window.location.href = "/templates/admin/admin_dashboard.html";
   } else {
-    logged_in_user = true;
-    localStorage.setItem("loggedUser", logged_in_admin);
+    localStorage.setItem("loggedUser", true);
+    localStorage.setItem("loggedAdmin", false);
     window.location.href = "/templates/base.html";
   }
   return false;
