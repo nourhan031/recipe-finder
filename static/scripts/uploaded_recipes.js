@@ -19,7 +19,7 @@ window.onload = function() {
   }
  
 function handleRecipeClick(recipeId){
-  alert('lll');
+  alert(recipeId);
   if (recipeId !== null) {
     const id = parseInt(recipeId);
     const recipe = recipes.find(recipe => recipe.id === id);
@@ -35,30 +35,27 @@ function handleRecipeClick(recipeId){
 }
 
 function createrecipeElement(recipeData) {
-      if (!recipeData.href || recipeData.href === '') {
-          return;
-        }
-      const recipeDiv = document.createElement('div');
-      recipeDiv.classList.add('category');
-      const recipelink = document.createElement('a');
-      // recipelink.href = 'recipe.html';
-      
-      const recipeImage = document.createElement('img');
-      recipeImage.src = recipeData.imagePath;
-      recipeImage.alt = recipeData.imageAlt;
-       // Set the id attribute her
-      recipeDiv.id = recipeData.id;
+  if (!recipeData.href || recipeData.href === '') {
+    return;
+  }
+  const recipeDiv = document.createElement('div');
+  recipeDiv.classList.add('category');
+  recipeDiv.id = recipeData.id; // Set the id attribute here
+  // recipeDiv.classList.add('id');
 
-      // alert(recipeData.id);
-      const recipeCaption = document.createElement('div');
-      recipeCaption.classList.add('caption');
-      recipeCaption.textContent = recipeData.recipeName;
-      recipelink.appendChild(recipeImage);
-      recipelink.appendChild(recipeCaption);
-      recipeDiv.appendChild(recipelink);
-      // alert(recipeDiv.id);
-      // recipeDiv.appendChild(recipeData.id);
+  const recipelink = document.createElement('a');
+  // recipelink.href = 'recipe.html';
+  const recipeImage = document.createElement('img');
+  recipeImage.src = recipeData.imagePath;
+  recipeImage.alt = recipeData.imageAlt;
 
-      return recipeDiv;
+  const recipeCaption = document.createElement('div');
+  recipeCaption.classList.add('caption');
+  recipeCaption.textContent = recipeData.recipeName;
+  recipelink.appendChild(recipeImage);
+  recipelink.appendChild(recipeCaption);
+  recipeDiv.appendChild(recipelink);
+
+  return recipeDiv;
 }
   

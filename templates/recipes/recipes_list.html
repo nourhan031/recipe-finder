@@ -57,17 +57,14 @@
        <footer>© 2024 Recipe Finder. All rights reserved.</footer>
        <script>
         // const recipesContainer = document.getElementById("recipes-container");
-         document.addEventListener('click', function(event) {
-        
-           alert(event.target.id);
-           if (event.target.id) {
-             // alert(event.target.);?
-             const recipeId = event.target.id;
-             handleRecipeClick(recipeId);
-           }else{
-             alert('nono')
-           }
-         });
+        document.addEventListener('click', function(event) {
+          const recipeDiv = event.target.closest('[id]');
+          if (recipeDiv) {
+            alert(recipeDiv.id);
+            const recipeId = recipeDiv.id;
+            handleRecipeClick(recipeId);
+          } 
+        });
       </script>
 </body>
 </html>
