@@ -47,7 +47,6 @@
           <div class="dropdown-content">
             <a href="/templates/authenticate/login.html">Login</a>
             <a href="/templates/authenticate/signup.html">Sign-up</a>
-        
           </div>
           </a>
         </li>
@@ -57,17 +56,18 @@
        <div id="recipes-container"></div>
        <footer>© 2024 Recipe Finder. All rights reserved.</footer>
        <script>
-         const recipesContainer = document.getElementById("recipes-container");
-          document.addEventListener('click', function(event) {
-            alert(event.target.recipeId);
-            if (event.target.hasAttribute('id')) {
-              // alert(event.target.);?
-              const recipeId = event.target.id;
-              handleRecipeClick(recipeId);
-            }else{
-              alert('nono')
-            }
-          });
-       </script>
+        // const recipesContainer = document.getElementById("recipes-container");
+         document.addEventListener('click', function(event) {
+        
+           alert(event.target.id);
+           if (event.target.id) {
+             // alert(event.target.);?
+             const recipeId = event.target.id;
+             handleRecipeClick(recipeId);
+           }else{
+             alert('nono')
+           }
+         });
+      </script>
 </body>
 </html>

@@ -46,13 +46,19 @@ function createrecipeElement(recipeData) {
       const recipeImage = document.createElement('img');
       recipeImage.src = recipeData.imagePath;
       recipeImage.alt = recipeData.imageAlt;
-      recipeDiv.id = recipeData.id; // Set the id attribute her
+       // Set the id attribute her
+      recipeDiv.id = recipeData.id;
+
+      // alert(recipeData.id);
       const recipeCaption = document.createElement('div');
       recipeCaption.classList.add('caption');
       recipeCaption.textContent = recipeData.recipeName;
       recipelink.appendChild(recipeImage);
       recipelink.appendChild(recipeCaption);
       recipeDiv.appendChild(recipelink);
+      // alert(recipeDiv.id);
+      // recipeDiv.appendChild(recipeData.id);
+
       return recipeDiv;
 }
   
