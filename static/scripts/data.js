@@ -1,4 +1,4 @@
-// Check if books data exists in local storage
+localStorage.clear();
 if (typeof localStorage.getItem('favorites') === 'undefined' || localStorage.getItem('favorites') === null) {
     const favorites = [];
     localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -14,15 +14,13 @@ function incId() {
   }
   return recipeId;
 }
-
 if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getItem('recipes') === null) {
-    cnt = 1;
     const recipeData1 = {
         href: "recipe.html",
         imagePath: "../../static/images/bolognese.jpg",
         imageAlt: "bolognese",
         recipeName: "Spaghetti Bolognese",
-        id: incId(),
+        id:incId()
       };
       
       const recipeData2 = {
@@ -30,7 +28,7 @@ if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getIt
         imagePath: "../../static/images/chicken.jpg",
         imageAlt: "chicken stir fry",
         recipeName: "Stir fry",
-        id: incId(),
+        id: incId()
       };
       
       const recipeData3 = {
@@ -120,15 +118,13 @@ if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getIt
         recipeName: "Veggie rice",
         id: incId(),
       };
-      
+      alert('llll');
       const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
       
       recipes.push(recipeData1, recipeData2, recipeData3, recipeData4, recipeData5, recipeData6, recipeData7, recipeData8, recipeData9, recipeData10, recipeData11, recipeData12, recipeData13);
       
       localStorage.setItem('recipes', JSON.stringify(recipes));
 }
-
-
 
 
 

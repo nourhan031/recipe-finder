@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../static/css/recipe.css">
     <script src="../../static/scripts/favorites.js"></script>
-    <script src="../../static/scripts/recipe.js"></script>
+    <!-- <script src="../../static/scripts/recipe.js"></script> -->
     <link rel="stylesheet" href="../../static/css/nav_bar.css">
     
 </head>
@@ -79,19 +79,23 @@
 
       // Set ingredients
       const ingredientsList = document.getElementById("ingredients");
-      recipeData.ingredients.forEach((ingredient) => {
-        const li = document.createElement("li");
-        li.textContent = ingredient;
-        ingredientsList.appendChild(li);
-      });
+      
+      // if(recipeData.ingredients){
+      //   recipeData.ingredients.forEach((ingredient) => {
+      //   const li = document.createElement("li");
+      //   li.textContent = ingredient;
+      //   ingredientsList.appendChild(li);
+      // });
 
-      // Set directions
-      const directionsList = document.getElementById("directions");
-      recipeData.directions.forEach((direction) => {
-        const li = document.createElement("li");
-        li.textContent = direction;
-        directionsList.appendChild(li);
-      });
+      // // Set directions
+      // const directionsList = document.getElementById("directions");
+      // recipeData.directions.forEach((direction) => {
+      //   const li = document.createElement("li");
+      //   li.textContent = direction;
+      //   directionsList.appendChild(li);
+      // });
+      // }
+      alert(recipeData.recipeName);
     </script>
   </body>
 </html>

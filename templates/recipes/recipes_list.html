@@ -8,6 +8,8 @@
   <!-- <link rel="stylesheet" href="../../static/css/recipe.css">\ -->
   <link rel="stylesheet" href="../../static/css/categories.css">
   <script src="../../static/scripts/uploaded_recipes.js"></script>
+  <script src="/static/scripts/data.js"></script>
+  
   <style>
     #favorites-container {
         list-style: none;
@@ -54,5 +56,18 @@
 </header>
        <div id="recipes-container"></div>
        <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+       <script>
+         const recipesContainer = document.getElementById("recipes-container");
+          document.addEventListener('click', function(event) {
+            alert(event.target.recipeId);
+            if (event.target.hasAttribute('id')) {
+              // alert(event.target.);?
+              const recipeId = event.target.id;
+              handleRecipeClick(recipeId);
+            }else{
+              alert('nono')
+            }
+          });
+       </script>
 </body>
 </html>
