@@ -9,8 +9,9 @@ function incId() {
     recipeId = 1;
     localStorage.setItem("id", recipeId);
   } else {
+    recipeId = Number(recipeId) + 1;
     recipeId = JSON.parse(recipeId);
-    localStorage.setItem("id", recipeId + 1);
+    localStorage.setItem("id", recipeId);
   }
   return recipeId;
 }
@@ -118,7 +119,6 @@ if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getIt
         recipeName: "Veggie rice",
         id: incId(),
       };
-      alert('llll');
       const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
       
       recipes.push(recipeData1, recipeData2, recipeData3, recipeData4, recipeData5, recipeData6, recipeData7, recipeData8, recipeData9, recipeData10, recipeData11, recipeData12, recipeData13);

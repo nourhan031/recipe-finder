@@ -49,54 +49,27 @@
     </div>
     <footer>© 2024 Recipe Finder. All rights reserved.</footer>
     <script>
-      // Recipe data
-      // const recipeData = {
-      //   recipeName: "Spaghetti Bolognese",
-      //   ingredients: [
-      //     "1 pound ground beef",
-      //     "1 onion, chopped",
-      //     "2 cloves garlic, minced",
-      //     "1 carrot, diced",
-      //     "1 celery stalk, diced",
-      //     "1 can (14 oz) crushed tomatoes",
-      //     "1/2 cup beef broth",
-      //     "1 tablespoon tomato paste",
-      //     "1 teaspoon dried oregano",
-      //     "Salt and pepper to taste",
-      //     "Cooked spaghetti for serving",
-      //   ],
-      //   directions: [
-      //     "In a large skillet, brown ground beef over medium heat.",
-      //     "Add chopped onion, minced garlic, diced carrot, and diced celery. Cook until vegetables are softened.",
-      //     "Add crushed tomatoes, beef broth, tomato paste, and dried oregano.",
-      //     "Season with salt and pepper to taste. Simmer for 20-30 minutes.",
-      //     "Serve hot over cooked spaghetti.",
-      //   ],
-      // };
-      const recipeData = localStorage.getItem('current');
-      // Set recipe name
+      const recipeData = JSON.parse(localStorage.getItem('current'));
       document.getElementById("recipe-name").textContent = recipeData.recipeName;
+      const ingredientsList = document.getElementById("ingredients");      
+      if(recipeData.ingredients){
+        recipeData.ingredients.forEach((ingredient) => {
+        const li = document.createElement("li");
+        li.textContent = ingredient;
+        ingredientsList.appendChild(li);
+      });
 
-      // Set ingredients
-      const ingredientsList = document.getElementById("ingredients");
-      
-      // if(recipeData.ingredients){
-      //   recipeData.ingredients.forEach((ingredient) => {
-      //   const li = document.createElement("li");
-      //   li.textContent = ingredient;
-      //   ingredientsList.appendChild(li);
-      // });
-
-      // // Set directions
-      // const directionsList = document.getElementById("directions");
-      // recipeData.directions.forEach((direction) => {
-      //   const li = document.createElement("li");
-      //   li.textContent = direction;
-      //   directionsList.appendChild(li);
-      // });
-      // }
-      alert(recipeData.recipeName);
-    </script>
+      const directionsList = document.getElementById("directions");
+      recipeData.directions.forEach((direction) => {
+        const li = document.createElement("li");
+        li.textContent = direction;
+        directionsList.appendChild(li);
+      });
+      }
+      document.getElementById("favorite-button").addEventListener("click", function() {
+       addtoFavorites(recipeData);
+       });
+  </script>
   </body>
 </html>
 </html>

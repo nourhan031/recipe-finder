@@ -17,7 +17,9 @@ window.onload = function() {
   }
 }
 
-function addToRecipes(recipeData) {
+function addtoFavorites(recipeData) {
+  let logged_in_user = JSON.parse(localStorage.getItem("loggedUser"));
+  // alert(logged_in_user);
   if(!logged_in_user){
     alert("log in first!!");
     window.location.href = "/templates/authenticate/login.html";

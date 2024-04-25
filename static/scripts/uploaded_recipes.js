@@ -18,21 +18,17 @@ window.onload = function() {
     }
   }
  
-function handleRecipeClick(recipeId){
-  alert(recipeId);
-  if (recipeId !== null) {
-    const id = parseInt(recipeId);
-    const recipe = recipes.find(recipe => recipe.id === id);
-    if (recipe !== undefined) {
-      localStorage.setItem('current', JSON.stringify(recipe));
-      alert("pp");
-    } else {
-      alert('nn')
+  function handleRecipeClick(recipeId) {
+    const recipesList = JSON.parse(localStorage.getItem("recipes")) || [];
+    if (recipeId !== null) {
+      const id = parseInt(recipeId);
+      const recipe = recipesList.find(recipe => recipe.id === id);
+      if (recipe !== undefined) {
+        localStorage.setItem('current', JSON.stringify(recipe));
+        window.location = "/templates/recipes/recipe.html";
+      } 
     }
-  } else {
-    alert('ll')
   }
-}
 
 function createrecipeElement(recipeData) {
   if (!recipeData.href || recipeData.href === '') {
@@ -48,14 +44,12 @@ function createrecipeElement(recipeData) {
   const recipeImage = document.createElement('img');
   recipeImage.src = recipeData.imagePath;
   recipeImage.alt = recipeData.imageAlt;
-
   const recipeCaption = document.createElement('div');
   recipeCaption.classList.add('caption');
   recipeCaption.textContent = recipeData.recipeName;
   recipelink.appendChild(recipeImage);
   recipelink.appendChild(recipeCaption);
   recipeDiv.appendChild(recipelink);
-
   return recipeDiv;
 }
   
