@@ -1,4 +1,3 @@
-// Function to search for recipes by name or ingredient
 function searchRecipes(query) {
     // Construct the API URL based on the user's query
     const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
