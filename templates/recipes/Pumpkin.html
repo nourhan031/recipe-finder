@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumpkin </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/css/recipe.css">
+    <script src="../../static/scripts/favorites.js"></script>
+    <link rel="stylesheet" href="../../static/css/nav_bar.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Pumpkin</h1>
+        </div>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar" class="navbar hidden">
+        <ul>
+            <li><a href="/templates/base.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" id="explore">Explore</a>
+              <div class="dropdown-content">
+                <a href="/templates/recipes/categories.html">Categories</a>
+                <a href="/templates/recipes/recipes_list.html">Recipes</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" id="profile-link">Profile</a>
+    
+              <div class="dropdown-content">
+                <a href="/templates/authenticate/login.html">Login</a>
+                <a href="/templates/authenticate/signup.html">Sign-up</a>
+            
+              </div>
+              </a>
+            </li>
+            <li> <a href="favorites.html">Favorites</a> </li>
+        </ul>
+    </nav>
+    </header>
+    <button id="favorite-button" >Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i></button>
+    <h2>Ingredients</h2>
+
+    <div class="ingredients-ul">
+        <ul>
+            <li>1 (15.25 ounce) package yellow cake mix, divided</li>
+            <li>⅓ cup unsalted butter, melted</li>
+            <li>1 large egg</li>
+            <li>1 (29 ounce) can pumpkin puree</li>
+            <li>3 large eggs</li>
+            <li>⅔ cup milk</li>
+            <li>½ cup brown sugar</li>
+            <li>2 tablespoons pumpkin pie spice</li>
+            <li>½ cup white sugar</li>
+            <li>¼ cup cold unsalted butter, cubed</li>
+            <li>¾ cup chopped walnuts</li>
+        </ul>
+    </div>
+    
+    <h2>Directions</h2>
+
+    <div class="ingredients-ol">
+        <ol>
+            <li>Gather all ingredients.</li>
+            <li>Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a 9x13-inch baking dish.</li>
+            <li>Make crust: Transfer 1 cup cake mix to a small bowl; set aside for topping. Place remaining cake mix in a
+                medium bowl with melted butter and egg; mix until well blended.</li>
+            <li>Spread mixture into the bottom of the prepared baking dish.</li>
+            <li>Make filling: Combine pumpkin puree, eggs, milk, brown sugar, and pumpkin pie spice in a large bowl; mix
+                well and pour over crust.</li>
+            <li>Make topping: Add white sugar and cubed butter to reserved cake mix; use a pastry blender to mix until
+                mixture resembles coarse crumbs.</li>
+            <li>Sprinkle over pumpkin filling, then scatter chopped walnuts over the top.</li>
+            <li>Bake in the preheated oven until the top is golden brown, 45 to 50 minutes.</li>
+            <li>Enjoy</li>
+        </ol>
+    </div>
+    
+    <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+</body>
+<script>
+ const recipeData = {
+    href: "Pumpkin.html",
+    imagePath: "../../static/images/Pumpkin.jpg",
+    imageAlt: "Pumpkin",
+    recipeName: "pumpkin" // Set the recipeName property here
+    };
+
+document.getElementById("favorite-button").addEventListener("click", function() {
+addToFavorites(recipeData);
+});
+</script>
+</html>

@@ -143,10 +143,3 @@ if (logged_in_admin === null) {
 } else {
     logged_in_admin = JSON.parse(logged_in_admin);
 }
-
-let currentRecipe = localStorage.getItem('current');
-if (currentRecipe === null) {
-    localStorage.setItem("current", currentRecipe);
-} else {
-  currentRecipe = JSON.parse(currentRecipe);
-}
