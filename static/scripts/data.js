@@ -21,7 +21,12 @@ if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getIt
         imagePath: "../../static/images/bolognese.jpg",
         imageAlt: "bolognese",
         recipeName: "Spaghetti Bolognese",
-        id:incId()
+        id:incId(),
+        ingredients: ["spaghetti", "minced beef", "onion", "garlic", "tomatoes", "salt", "pepper"],
+        directions: ["Boil the spaghetti in salted water until al dente.", "While the spaghetti is boiling, chop the onion and garlic and fry them in a pan.",
+         "Add the minced beef to the pan and fry until browned.", 
+         "Add the canned tomatoes to the pan and simmer for 15 minutes.", 
+         "Season with salt and pepper.", "Drain the spaghetti and serve with the bolognese sauce."]
       };
       
       const recipeData2 = {
@@ -29,7 +34,13 @@ if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getIt
         imagePath: "../../static/images/chicken.jpg",
         imageAlt: "chicken stir fry",
         recipeName: "Stir fry",
-        id: incId()
+        id: incId(), 
+        ingredients: ["chicken breast", "bell pepper", "onion", "garlic", "soy sauce", "sesame oil", "salt", "pepper"],
+        directions: ["Cut the chicken breast into thin slices.", "Chop the bell pepper, onion, and garlic.", 
+        "Heat the sesame oil in a pan.", "Add the chicken to the pan and fry until browned.", 
+        "Add the bell pepper, onion, and garlic to the pan and stir fry for a few minutes.",
+         "Add the soy sauce and stir well.", "Season with salt and pepper."
+         , "Serve the stir fry with rice or noodles."]
       };
       
       const recipeData3 = {
@@ -150,3 +161,43 @@ if (currentRecipe === null) {
 } else {
   currentRecipe = JSON.parse(currentRecipe);
 }
+
+
+// SEARCH
+// Event listener for the search form
+document.querySelector('.example').addEventListener('submit', function (event) {
+    const searchInput = document.querySelector('input[name="search"]').value.toLowerCase();
+    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+    // Filter recipes by name or ingredients
+    const filteredRecipes = recipes.filter(recipe => {
+        const recipeNameMatch = recipe.recipeName.toLowerCase().includes(searchInput);
+        const ingredientMatch = recipe.ingredients.some(ingredient =>
+            ingredient.toLowerCase().includes(searchInput)
+        );
+
+        return recipeNameMatch || ingredientMatch;
+    });
+
+    // Get the recipe container
+    const recipeContainer = document.getElementById("recipe-container");
+    recipeContainer.innerHTML = ''; // Clear previous results
+
+    if (filteredRecipes.length === 0) {
+        recipeContainer.innerHTML = '<p>No matching recipes found.</p>'; // No results message
+    } else {
+        // Display the filtered recipes
+        filteredRecipes.forEach(recipe => {
+            const recipeDiv = document.createElement('div');
+            recipeDiv.classList.add('recipe');
+
+            recipeDiv.innerHTML = `
+                <h3>${recipe.recipeName}</h3>
+                <p>Ingredients: ${recipe.ingredients.join(', ')}</p>
+                <a href="${recipe.href}">View Recipe</a>
+            `;
+
+            recipeContainer.appendChild(recipeDiv);
+        });
+    }
+});
