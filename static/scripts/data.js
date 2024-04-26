@@ -39,8 +39,8 @@ if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getIt
         directions: ["Cut the chicken breast into thin slices.", "Chop the bell pepper, onion, and garlic.", 
         "Heat the sesame oil in a pan.", "Add the chicken to the pan and fry until browned.", 
         "Add the bell pepper, onion, and garlic to the pan and stir fry for a few minutes.",
-         "Add the soy sauce and stir well.", "Season with salt and pepper."
-         , "Serve the stir fry with rice or noodles."]
+         "Add the soy sauce and stir well.", "Season with salt and pepper.",
+         "Serve the stir fry with rice or noodles."]
       };
       
       const recipeData3 = {
@@ -49,6 +49,18 @@ if (typeof localStorage.getItem('recipes') === 'undefined' || localStorage.getIt
         imageAlt: "creme brulee",
         recipeName: "Creme Brulee",
         id: incId(),
+        ingredients: ["1 quart heavy cream", "1 vanilla bean, split and scraped", "1 cup vanilla sugar", "6 large egg yolks", "2 quarts hot water", "1/2 cup granulated sugar"],
+    directions: [
+        "Preheat the oven to 325 degrees F.",
+        "In a medium saucepan, mix together the heavy cream, vanilla bean and its pulp. Bring to a boil over medium-high heat, then remove from heat and let it sit for 15 minutes.",
+        "In a medium bowl, whisk together 1/2 cup sugar and the egg yolks until well blended and it starts to lighten in color.",
+        "Add the cream a little at a time, stirring continually. Pour the liquid into 6 (7 to 8-ounce) ramekins. Place the ramekins into a large cake pan or roasting pan.",
+        "Pour enough hot water into the pan to come halfway up the sides of the ramekins.",
+        "Bake just until the creme brulee is set, but still trembling in the center, approximately 40 to 45 minutes.",
+        "Remove the ramekins from the roasting pan and refrigerate for at least 2 hours and up to 3 days.",
+        "Remove the creme brulee from the refrigerator for at least 30 minutes prior to browning the sugar on top.",
+        "Divide the remaining 1/2 cup vanilla sugar equally among the 6 dishes and spread evenly on top. Using a torch, melt the sugar and form a crispy top. Allow the creme brulee to sit for at least 5 minutes before serving."
+    ]
       };
       
       const recipeData4 = {
@@ -161,43 +173,3 @@ if (currentRecipe === null) {
 } else {
   currentRecipe = JSON.parse(currentRecipe);
 }
-
-
-// SEARCH
-// Event listener for the search form
-document.querySelector('.example').addEventListener('submit', function (event) {
-    const searchInput = document.querySelector('input[name="search"]').value.toLowerCase();
-    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
-
-    // Filter recipes by name or ingredients
-    const filteredRecipes = recipes.filter(recipe => {
-        const recipeNameMatch = recipe.recipeName.toLowerCase().includes(searchInput);
-        const ingredientMatch = recipe.ingredients.some(ingredient =>
-            ingredient.toLowerCase().includes(searchInput)
-        );
-
-        return recipeNameMatch || ingredientMatch;
-    });
-
-    // Get the recipe container
-    const recipeContainer = document.getElementById("recipe-container");
-    recipeContainer.innerHTML = ''; // Clear previous results
-
-    if (filteredRecipes.length === 0) {
-        recipeContainer.innerHTML = '<p>No matching recipes found.</p>'; // No results message
-    } else {
-        // Display the filtered recipes
-        filteredRecipes.forEach(recipe => {
-            const recipeDiv = document.createElement('div');
-            recipeDiv.classList.add('recipe');
-
-            recipeDiv.innerHTML = `
-                <h3>${recipe.recipeName}</h3>
-                <p>Ingredients: ${recipe.ingredients.join(', ')}</p>
-                <a href="${recipe.href}">View Recipe</a>
-            `;
-
-            recipeContainer.appendChild(recipeDiv);
-        });
-    }
-});
