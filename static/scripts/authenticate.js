@@ -54,7 +54,22 @@ function login_redirect() {
       alert("Admin login failed");
       return false;
     }
-  } else {
+  }
+
+  else if (role == "user") {
+    var storedUsername = localStorage.getItem("user_username");
+    var storedUserPassword = localStorage.getItem("user_password");
+
+    if (storedUsername === username && storedPassword === password) {
+      alert("User login successful");
+      window.location.href = "/templates/base.html";
+    } else {
+      alert("User login failed");
+      return false;
+    }
+  }
+  
+  else {
     window.location.href = "/templates/base.html";
   }
 
