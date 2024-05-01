@@ -14,20 +14,15 @@ function signup_redirect() {
     localStorage.setItem("admin_username", username);
     localStorage.setItem("admin_password", password); // In a real app, consider hashing this
 
-    if (typeof logged_in_user !== "undefined" && logged_in_user) {
-      logged_in_user = !logged_in_user;
-      alert("Logged out as user");
-    }
     alert("Logged in as admin");
     localStorage.setItem("loggedUser", false);
     localStorage.setItem("loggedAdmin", true);
 
     window.location.href = "/templates/admin/admin_dashboard.html";
   } else {
-    if (typeof logged_in_admin !== "undefined" && logged_in_admin) {
-      logged_in_admin = !logged_in_admin;
-      alert("Logged out as admin");
-    }
+    localStorage.setItem("user_username", username);
+    localStorage.setItem("user_password", password);
+
     localStorage.setItem("loggedUser", true);
     localStorage.setItem("loggedAdmin", false);
     window.location.href = "/templates/base.html";
@@ -59,7 +54,7 @@ function login_redirect() {
     var storedUsername = localStorage.getItem("user_username");
     var storedUserPassword = localStorage.getItem("user_password");
 
-    if (storedUsername === username && storedPassword === password) {
+    if (storedUsername === username && storedUserPassword === password) {
       localStorage.setItem("loggedUser", true);
       localStorage.setItem("loggedAdmin", false);
       alert("User login successful");
