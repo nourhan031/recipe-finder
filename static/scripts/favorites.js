@@ -1,26 +1,25 @@
-
-
-window.onload = function() {
+window.onload = function () {
   // Get the favorites from local storage
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   // Create a list of favorites
   const favoritesList = document.getElementById("favorites-container");
   if (favoritesList && favorites) {
     favorites.forEach((recipeData) => {
-      if(recipeData){
-        if (recipeData.href && recipeData.href !== '') {
-        const favoriteDiv = createFavoriteElement(recipeData);
-        favoritesList.appendChild(favoriteDiv);
-      }
+      if (recipeData) {
+        if (recipeData.href && recipeData.href !== "") {
+          const favoriteDiv = createFavoriteElement(recipeData);
+          favoritesList.appendChild(favoriteDiv);
+        }
       }
     });
   }
-}
+};
 
 function addtoFavorites(recipeData) {
   let logged_in_user = JSON.parse(localStorage.getItem("loggedUser"));
+  let logged_in_admin = JSON.parse(localStorage.getItem("loggedAdmin"));
   // alert(logged_in_user);
-  if(!logged_in_user){
+  if (logged_in_user == false || logged_in_admin == true) {
     alert("log in first!!");
     window.location.href = "/templates/authenticate/login.html";
     return;
@@ -41,29 +40,29 @@ function addtoFavorites(recipeData) {
   }
 }
 
-  function createFavoriteElement(recipeData) {
-    if (!recipeData.href || recipeData.href === '') {
-        // console.error('Invalid href property in recipeData:', recipeData);
-        return;
-      }
-    const favoriteDiv = document.createElement('div');
-    favoriteDiv.classList.add('category');
-  
-    const favoriteLink = document.createElement('a');
-    favoriteLink.href = 'recipe.html';
-  
-    const favoriteImage = document.createElement('img');
-    favoriteImage.src = recipeData.imagePath;
-    favoriteImage.alt = recipeData.imageAlt;
-  
-    const favoriteCaption = document.createElement('div');
-    favoriteCaption.classList.add('caption');
-    favoriteCaption.textContent = recipeData.recipeName;
-    favoriteLink.appendChild(favoriteImage);
-    favoriteLink.appendChild(favoriteCaption);
-    favoriteDiv.appendChild(favoriteLink);
-    return favoriteDiv;
+function createFavoriteElement(recipeData) {
+  if (!recipeData.href || recipeData.href === "") {
+    // console.error('Invalid href property in recipeData:', recipeData);
+    return;
   }
+  const favoriteDiv = document.createElement("div");
+  favoriteDiv.classList.add("category");
+
+  const favoriteLink = document.createElement("a");
+  favoriteLink.href = "recipe.html";
+
+  const favoriteImage = document.createElement("img");
+  favoriteImage.src = recipeData.imagePath;
+  favoriteImage.alt = recipeData.imageAlt;
+
+  const favoriteCaption = document.createElement("div");
+  favoriteCaption.classList.add("caption");
+  favoriteCaption.textContent = recipeData.recipeName;
+  favoriteLink.appendChild(favoriteImage);
+  favoriteLink.appendChild(favoriteCaption);
+  favoriteDiv.appendChild(favoriteLink);
+  return favoriteDiv;
+}
 
 // This function will be called when the favorite button is clicked on the recipe page
 function insertFavoriteElement(recipeData) {

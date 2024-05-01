@@ -14,22 +14,22 @@ function signup_redirect() {
     localStorage.setItem("admin_username", username);
     localStorage.setItem("admin_password", password); // In a real app, consider hashing this
 
-    if (typeof logged_in_user !== 'undefined' && logged_in_user) {
+    if (typeof logged_in_user !== "undefined" && logged_in_user) {
       logged_in_user = !logged_in_user;
       alert("Logged out as user");
     }
     alert("Logged in as admin");
-    logged_in_admin = true;
+    localStorage.setItem("loggedUser", false);
+    localStorage.setItem("loggedAdmin", true);
 
     window.location.href = "/templates/admin/admin_dashboard.html";
-  }
-
-  else {
-    if (typeof logged_in_admin !== 'undefined' && logged_in_admin) {
+  } else {
+    if (typeof logged_in_admin !== "undefined" && logged_in_admin) {
       logged_in_admin = !logged_in_admin;
       alert("Logged out as admin");
     }
-    logged_in_user = true;
+    localStorage.setItem("loggedUser", true);
+    localStorage.setItem("loggedAdmin", false);
     window.location.href = "/templates/base.html";
     alert("Logged out as user");
   }
@@ -47,15 +47,18 @@ function login_redirect() {
     var storedAdminUsername = localStorage.getItem("admin_username");
     var storedAdminPassword = localStorage.getItem("admin_password");
 
+    localStorage.setItem("loggedUser", false);
+    localStorage.setItem("loggedAdmin", true);
     if (storedAdminUsername === username && storedAdminPassword === password) {
       alert("Admin login successful");
       window.location.href = "/templates/admin/admin_dashboard.html";
     } else {
       alert("Admin login failed");
-      return false;
     }
   } else {
+    localStorage.setItem("loggedUser", true);
+    localStorage.setItem("loggedAdmin", false);
     window.location.href = "/templates/base.html";
   }
-
+  return false;
 }

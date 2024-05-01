@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../../static/css/nav_bar.css">
   <!-- <link rel="stylesheet" href="../../static/css/recipe.css">\ -->
   <link rel="stylesheet" href="../../static/css/categories.css">
-  <script src="../../static/scripts/favorites.js"></script>
   <style>
     #favorites-container {
         list-style: none;
@@ -22,6 +21,14 @@
         border-bottom: none;
         }
   </style>
+  <script>
+    let logged_in_user = JSON.parse(localStorage.getItem("loggedUser"));
+    let logged_in_admin = JSON.parse(localStorage.getItem("loggedAdmin"));
+    if (logged_in_user == false || logged_in_admin == true) {
+    alert("log in first!!");
+    window.location.href = "/templates/authenticate/login.html";
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -52,7 +59,30 @@
     </ul>
 </nav>
 </header>
-       <div id="favorites-container"></div>
-       <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+
+  <div id="favorites-container"></div>
+
+  
+  <script src="../../static/scripts/favorites.js"></script>
+  <script>  
+  window.onload = function() {
+    // Get the favorites from local storage
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    // Create a list of favorites
+    const favoritesList = document.getElementById("favorites-container");
+    if (favoritesList && favorites) {
+      favorites.forEach((recipeData) => {
+        if(recipeData){
+          if (recipeData.href && recipeData.href !== '') {
+          const favoriteDiv = createFavoriteElement(recipeData);
+          favoritesList.appendChild(favoriteDiv);
+        }
+        }
+      });
+    }
+  }
+  </script>
+      <footer>Â© 2024 Recipe Finder. All rights reserved.</footer>
 </body>
 </html>
