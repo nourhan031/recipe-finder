@@ -2,37 +2,60 @@ function signup_redirect() {
   var password = document.getElementById("password").value;
   var confirmPassword = document.getElementById("confirm_password").value;
   var role = document.getElementById("role").value;
+  var username = document.getElementById("username").value;
 
   if (password !== confirmPassword) {
     alert("Passwords do not match");
     return false;
   }
+
   if (role === "admin") {
-    if(logged_in_user){
+    // Save admin credentials in local storage
+    localStorage.setItem("admin_username", username);
+    localStorage.setItem("admin_password", password); // In a real app, consider hashing this
+
+    if (typeof logged_in_user !== 'undefined' && logged_in_user) {
       logged_in_user = !logged_in_user;
-      alert('logged out as user');
+      alert("Logged out as user");
     }
-    alert('logged in as admin');
+    alert("Logged in as admin");
     logged_in_admin = true;
+
     window.location.href = "/templates/admin/admin_dashboard.html";
-  } else {
-    if(logged_in_admin){
+  }
+
+  else {
+    if (typeof logged_in_admin !== 'undefined' && logged_in_admin) {
       logged_in_admin = !logged_in_admin;
-      alert('logged out as admin');
+      alert("Logged out as admin");
     }
     logged_in_user = true;
     window.location.href = "/templates/base.html";
-    alert('logged out as user');
+    alert("Logged out as user");
   }
+
   return false;
 }
 
 function login_redirect() {
   var role = document.getElementById("role").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
   if (role === "admin") {
-    window.location.href = "/templates/admin/admin_dashboard.html";
+    // Check admin credentials in local storage
+    var storedAdminUsername = localStorage.getItem("admin_username");
+    var storedAdminPassword = localStorage.getItem("admin_password");
+
+    if (storedAdminUsername === username && storedAdminPassword === password) {
+      alert("Admin login successful");
+      window.location.href = "/templates/admin/admin_dashboard.html";
+    } else {
+      alert("Admin login failed");
+      return false;
+    }
   } else {
     window.location.href = "/templates/base.html";
   }
-  return false;
+
 }
