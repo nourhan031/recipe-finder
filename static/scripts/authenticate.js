@@ -47,18 +47,28 @@ function login_redirect() {
     var storedAdminUsername = localStorage.getItem("admin_username");
     var storedAdminPassword = localStorage.getItem("admin_password");
 
-    localStorage.setItem("loggedUser", false);
-    localStorage.setItem("loggedAdmin", true);
     if (storedAdminUsername === username && storedAdminPassword === password) {
+      localStorage.setItem("loggedUser", false);
+      localStorage.setItem("loggedAdmin", true);
       alert("Admin login successful");
       window.location.href = "/templates/admin/admin_dashboard.html";
     } else {
       alert("Admin login failed");
     }
-  } else {
-    localStorage.setItem("loggedUser", true);
-    localStorage.setItem("loggedAdmin", false);
-    window.location.href = "/templates/base.html";
+  } else if (role == "user") {
+    var storedUsername = localStorage.getItem("user_username");
+    var storedUserPassword = localStorage.getItem("user_password");
+
+    if (storedUsername === username && storedPassword === password) {
+      localStorage.setItem("loggedUser", true);
+      localStorage.setItem("loggedAdmin", false);
+      alert("User login successful");
+      window.location.href = "/templates/base.html";
+    } else {
+      alert("User login failed");
+      return false;
+    }
   }
+
   return false;
 }
