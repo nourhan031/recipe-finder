@@ -5,6 +5,8 @@ if (
   const favorites = [];
   localStorage.setItem("favorites", JSON.stringify(favorites));
 }
+
+const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
 function incId() {
   let recipeId = localStorage.getItem("id");
   if (recipeId === null) {
@@ -370,7 +372,13 @@ if (
       "Fluff the rice with a fork, remove the bay leaf and serve! Garnish with fresh chopped dill, optional.",
     ],
   };
-  const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+
+
+
+
+
+
 
   recipes.push(
     recipeData1,
@@ -385,11 +393,61 @@ if (
     recipeData10,
     recipeData11,
     recipeData12,
-    recipeData13
+    recipeData13,
   );
 
   localStorage.setItem("recipes", JSON.stringify(recipes));
+
 }
+
+
+
+
+
+let add = document.getElementById("ptn_add");
+
+
+
+
+function Add_recipe() {
+  let recipe_name = document.getElementById('recipeName');
+  let ing = document.getElementById('ingredients');
+  
+  
+ 
+  
+
+
+  const recipeData = {
+    href: "recipe.html",
+    imagePath: "../../static/images/photo2.png",
+    imageAlt: recipe_name.value,
+    recipeName: recipe_name.value,
+    id: incId(),
+    ingredients: [],
+    directions: []
+
+  };
+
+
+
+
+
+
+  recipes.push(recipeData);
+  localStorage.setItem("recipes", JSON.stringify(recipes));
+
+}
+
+function hello() {
+  console.log("hello");
+
+}
+
+add.onclick = function() {
+  Add_recipe();
+}
+
 
 let logged_in_user = localStorage.getItem("loggedUser");
 if (logged_in_user === null) {
