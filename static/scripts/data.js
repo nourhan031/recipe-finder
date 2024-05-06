@@ -476,10 +476,7 @@ function Add_recipe() {
 
 }
 
-function hello() {
-  console.log("hello");
 
-}
 
 add.onclick = function () {
   Add_recipe();
