@@ -28,6 +28,8 @@ function deleteRecipe() {
 function edit_recipe() {
   let recipeName = document.getElementById("recipeName");
   let recipes = JSON.parse(localStorage.getItem("recipes"));
+  let ing = document.getElementById("ingredients");
+  let des = document.getElementById("description");
 
   if (recipes) {
     const index = recipes.findIndex(
@@ -35,6 +37,80 @@ function edit_recipe() {
     );
 
     if (index !== -1) {
+      let directions = [];
+      let ingredients = [];
+      let word = "";
+      let idx = 0;
+      while (ing.value[idx] != ".") {
+        if (ing.value[idx] == ",") {
+          ingredients.push(word);
+          word = "";
+          idx++;
+          continue;
+        }
+
+        if (!(ing.value[idx] == " " && word.length == 0)) {
+          let new_word = word.concat(ing.value[idx]);
+          word = new_word;
+        }
+        idx++;
+      }
+      ingredients.push(word);
+
+      word = "";
+
+      idx = 0;
+      while (des.value[idx] != ".") {
+        if (des.value[idx] == ",") {
+          directions.push(word);
+          word = "";
+          idx++;
+          continue;
+        }
+
+        if (!(des.value[idx] == " " && word.length == 0)) {
+          let new_word = word.concat(des.value[idx]);
+          word = new_word;
+        }
+        idx++;
+      }
+      directions.push(word);
+
+      const recipeData = {
+        href: "recipe.html",
+        imagePath: recipes[index].imagePath,
+        imageAlt: recipeName.value,
+        recipeName: recipeName.value,
+        id: incId(),
+        ingredients: ingredients,
+        directions: directions,
+      };
+      deleteRecipeforEdit(recipeName);
+      let recipes2 = JSON.parse(localStorage.getItem("recipes"));
+      recipes2.push(recipeData);
+      localStorage.setItem("recipes", JSON.stringify(recipes2));
+    } else {
+      console.log(`Recipe '${recipeName}' not found.`);
+    }
+  } else {
+    console.log("No recipes found in local storage.");
+  }
+}
+
+function deleteRecipeforEdit(recipeName) {
+  let recipes = JSON.parse(localStorage.getItem("recipes"));
+
+  if (recipes) {
+    const index = recipes.findIndex(
+      (recipe) => recipe.recipeName === recipeName.value
+    );
+
+    if (index !== -1) {
+      recipes.splice(index, 1);
+
+      localStorage.setItem("recipes", JSON.stringify(recipes));
+
+      console.log(`Recipe '${recipeName}' deleted successfully.`);
     } else {
       console.log(`Recipe '${recipeName}' not found.`);
     }
