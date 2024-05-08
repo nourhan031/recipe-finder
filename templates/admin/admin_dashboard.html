@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../static/css/admin_dashboard.css">
     <link rel="stylesheet" href="../../static/css/nav_bar.css">
     <script src="../../static/scripts/uploaded_recipes.js"></script>
-
+    <link rel="stylesheet" href="../../static/css/categories.css">
 </head>
 <body>
     <header>
@@ -42,46 +42,18 @@
         <a href="admin_add_recipe.html" class="add-recipe"><button>Modify</button></a>
 
         <div class="recipe-list">
-            <h2>Uploaded Recipes</h2>
-            <div class="recipe-grid">
-                <div class="recipe-item" id="peanut_butter">
-                    <h3>No bake peanut butter treats</h3>
-                    <ul class="recipe-actions">
-                        <!-- <li><a href="viewPB.html">View</a></li> -->
-                        <!-- <li><a href="edit_recipe.html">Edit</a></li> -->
-                        <!-- <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li> -->
-                        <li><a href="viewPB.html">View</a></li>
-                    </ul>
-                </div>
-                <div class="recipe-item" id="veg_rice">
-                    <h3>Vegetable Fried Rice</h3>
-                    <ul class="recipe-actions">
-                        <!-- <li><a href="/templates/recipes/viewVegRice.html">View</a></li> -->
-                        <!-- <li><a href="edit_recipe.html">Edit</a></li> -->
-                        <!-- <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li> -->
-                        <li><a href="/templates/recipes/viewVegRice.html">View</a></li>
-                    </ul>
-                </div>
-                <div class="recipe-item" id="chicken-sf">
-                    <h3>Chicken Stir-Fry</h3>
-                    <ul class="recipe-actions">
-                        <!-- <li><a href="/templates/recipes/chickenSF.html">View</a></li> -->
-                        <!-- <li><a href="edit_recipe.html">Edit</a></li> -->
-                        <!-- <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li> -->
-                        <li><a href="/templates/recipes/chickenSF.html">View</a></li>
-                    </ul>
-                </div>
-                <div class="recipe-item" id="pizza">
-                    <h3>Classic Margherita Pizza</h3>
-                    <ul class="recipe-actions">
-                        <!-- <li><a href="margherita.html">View</a></li> -->
-                        <!-- <li><a href="edit_recipe.html">Edit</a></li> -->
-                        <li><a href="margherita.html">View</a></li>
 
-                        <!-- <li><a href="#" onclick="deleteRecipe(1)">Delete</a></li> -->
-                    </ul>
-                </div>
-            </div>
+          <div id="recipes-container"></div>
+          <script>
+              // const recipesContainer = document.getElementById("recipes-container");
+              document.addEventListener('click', function(event) {
+                const recipeDiv = event.target.closest('[id]');
+                if (recipeDiv) {
+                  const recipeId = recipeDiv.id;
+                  handleRecipeClick(recipeId);
+                } 
+              });
+            </script>
         </div>
         <script>
             // const recipesContainer = document.getElementById("recipes-container");
