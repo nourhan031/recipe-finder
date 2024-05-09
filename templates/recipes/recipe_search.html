@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="../../static/css/nav_bar.css">
   <!-- <link rel="stylesheet" href="../../static/css/recipe.css">\ -->
   <link rel="stylesheet" href="../../static/css/categories.css">
-  <script src="../../static/scripts/uploaded_recipes.js"></script>
-  <script src="/static/scripts/data.js"></script>
-  
+
+
   <style>
     #favorites-container {
         list-style: none;
@@ -53,8 +52,22 @@
     </ul>
 </nav>
 </header>
+<input type="text"  id="search_tag">
+<button id="ptn_tag">Search </button>
+<button id="ptn_clr">Clear</button>
        <div id="recipes-container"></div>
        <footer>© 2024 Recipe Finder. All rights reserved.</footer>
-      
+       <script>
+        // const recipesContainer = document.getElementById("recipes-container");
+        document.addEventListener('click', function(event) {
+          const recipeDiv = event.target.closest('[id]');
+          if (recipeDiv) {
+            const recipeId = recipeDiv.id;
+            handleRecipeClick(recipeId);
+          } 
+        });
+      </script>
+       
+      <script src="../../static/scripts/search.js"></script>
 </body>
 </html>

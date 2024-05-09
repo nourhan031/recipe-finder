@@ -1,5 +1,4 @@
 
-  
 window.onload = function() {
     // Get the favorites from local storage
     const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
@@ -34,6 +33,7 @@ function createrecipeElement(recipeData) {
   if (!recipeData.href || recipeData.href === '') {
     return;
   }
+  
   const recipeDiv = document.createElement('div');
   recipeDiv.classList.add('category');
   recipeDiv.id = recipeData.id; // Set the id attribute here
