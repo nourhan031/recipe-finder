@@ -40,7 +40,7 @@ function createrecipeElement(recipeData) {
   // recipeDiv.classList.add('id');
 
   const recipelink = document.createElement('a');
-  // recipelink.href = 'recipe.html';
+  recipelink.href = 'recipe.html';
   const recipeImage = document.createElement('img');
   recipeImage.src = recipeData.imagePath;
   recipeImage.alt = recipeData.imageAlt;
@@ -52,7 +52,3 @@ function createrecipeElement(recipeData) {
   recipeDiv.appendChild(recipelink);
   return recipeDiv;
 }
-  
-
-
-// SEARCH
