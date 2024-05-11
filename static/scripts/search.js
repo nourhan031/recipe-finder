@@ -1,22 +1,25 @@
 let search_inp = document.getElementById("search_tag");
 let search_ptn = document.getElementById("ptn_tag");
+let search_recipe = document.getElementById("ptn_recipe");
 let target = "";
 let flag = false;
 target = target.toLowerCase();
 
-function check(recipeData) {
+function check(recipeData, searchType) {
     let name = recipeData.recipeName.split(" ");
     let word = "";
-    name.forEach(element => {
+    if (searchType === "recipe") {
+        name.forEach(element => {
         word = element.toLowerCase();
         if (target == word) {
             flag = true;
         }
     });
-
+    }
 
     let ings = recipeData.ingredients;
-    ings.forEach(element => {
+    if (searchType === "ingredient") {
+        ings.forEach(element => {
         let words = element.split(" ");
         words.forEach(element => {
             word = element.toLowerCase();
@@ -35,7 +38,7 @@ function check(recipeData) {
         });
     });
 }
-
+}
 
 
 search_ptn.onclick = function () {
@@ -52,7 +55,7 @@ search_ptn.onclick = function () {
             if (recipeData) {
                 if (recipeData.href && recipeData.href !== '') {
                     flag = false;
-                    check(recipeData);
+                    check(recipeData, "ingredient");
                     if (flag) {
                         const recipeDiv = createrecipeElement(recipeData);
                         recipesList.appendChild(recipeDiv);
@@ -63,6 +66,31 @@ search_ptn.onclick = function () {
     }
 }
 
+
+search_recipe.onclick = function(){
+    const recipesList = document.getElementById("recipes-container");
+    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+    recipesList.replaceChildren();
+
+    target = search_inp.value;
+    target = target.toLowerCase();
+
+    if (recipesList && recipes) {
+        recipes.forEach((recipeData) => {
+            if (recipeData) {
+                if (recipeData.href && recipeData.href !== '') {
+                    flag = false;
+                    check(recipeData, "recipe");
+                    if (flag) {
+                        const recipeDiv = createrecipeElement(recipeData);
+                        recipesList.appendChild(recipeDiv);
+                    }
+                }
+            }
+        });
+    }
+}
 
 
 function handleRecipeClick(recipeId) {
