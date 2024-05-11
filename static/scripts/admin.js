@@ -2,6 +2,31 @@ let add = document.getElementById("ptn_add");
 let dlt = document.getElementById("ptn_dlt");
 let edit = document.getElementById("ptn_edit");
 
+function Array_Formation(User_input) {
+  let Array = [];
+  let sentence = "";
+  let idx = 0;
+  while (User_input.value[idx] != ".") {
+    if (User_input.value[idx] == ";") {
+      Array.push(sentence);
+      sentence = "";
+      idx++;
+      continue;
+    }
+
+    if (!(User_input.value[idx] == " " && sentence.length == 0)) {
+      let new_sentence = sentence.concat(User_input.value[idx]);
+      sentence = new_sentence;
+    }
+    idx++;
+  }
+  Array.push(sentence);
+
+  return Array;
+
+}
+
+
 function deleteRecipe() {
   let recipeName = document.getElementById("delrecipeName");
   let recipes = JSON.parse(localStorage.getItem("recipes"));
@@ -27,11 +52,12 @@ function deleteRecipe() {
   }
 }
 
+
 function edit_recipe() {
   let recipeName = document.getElementById("recipeName");
   let recipes = JSON.parse(localStorage.getItem("recipes"));
-  let ing = document.getElementById("ingredients");
-  let des = document.getElementById("description");
+  let ingredients_inp = document.getElementById("ingredients");
+  let description_inp = document.getElementById("description");
 
   if (recipes) {
     const index = recipes.findIndex(
@@ -39,53 +65,14 @@ function edit_recipe() {
     );
 
     if (index !== -1) {
-      let directions = [];
-      let ingredients = [];
-      let word = "";
-      let idx = 0;
-      while (ing.value[idx] != ".") {
-        if (ing.value[idx] == ",") {
-          ingredients.push(word);
-          word = "";
-          idx++;
-          continue;
-        }
-
-        if (!(ing.value[idx] == " " && word.length == 0)) {
-          let new_word = word.concat(ing.value[idx]);
-          word = new_word;
-        }
-        idx++;
-      }
-      ingredients.push(word);
-
-      word = "";
-
-      idx = 0;
-      while (des.value[idx] != ".") {
-        if (des.value[idx] == ",") {
-          directions.push(word);
-          word = "";
-          idx++;
-          continue;
-        }
-
-        if (!(des.value[idx] == " " && word.length == 0)) {
-          let new_word = word.concat(des.value[idx]);
-          word = new_word;
-        }
-        idx++;
-      }
-      directions.push(word);
-
       const recipeData = {
         href: "recipe.html",
         imagePath: recipes[index].imagePath,
         imageAlt: recipeName.value,
         recipeName: recipeName.value,
         id: incId(),
-        ingredients: ingredients,
-        directions: directions,
+        ingredients: Array_Formation(ingredients_inp),
+        directions: Array_Formation(description_inp),
       };
 
       // Reuse deleteRecipe function
@@ -94,7 +81,7 @@ function edit_recipe() {
       let updatedRecipes = [...recipes];
       updatedRecipes.splice(index, 1, recipeData);
       localStorage.setItem("recipes", JSON.stringify(updatedRecipes));
-      
+
       console.log(`Recipe '${recipeName.value}' updated successfully.`);
       alert(`Recipe '${recipeName.value}' updated successfully.`);
     } else {
@@ -108,49 +95,13 @@ function edit_recipe() {
 }
 
 
+
+
 function Add_recipe() {
   let recipe_name = document.getElementById("recipeName");
-  let ing = document.getElementById("ingredients");
-  let des = document.getElementById("description");
-  let arr = [];
-  let word = "";
-  let arr2 = [];
+  let ingredients_inp = document.getElementById("ingredients");
+  let description_inp = document.getElementById("description");
 
-  let idx = 0;
-  while (ing.value[idx] != ".") {
-    if (ing.value[idx] == ",") {
-      arr.push(word);
-      word = "";
-      idx++;
-      continue;
-    }
-
-    if (!(ing.value[idx] == " " && word.length == 0)) {
-      let new_word = word.concat(ing.value[idx]);
-      word = new_word;
-    }
-    idx++;
-  }
-  arr.push(word);
-
-  word = "";
-
-  idx = 0;
-  while (des.value[idx] != ".") {
-    if (des.value[idx] == ",") {
-      arr2.push(word);
-      word = "";
-      idx++;
-      continue;
-    }
-
-    if (!(des.value[idx] == " " && word.length == 0)) {
-      let new_word = word.concat(des.value[idx]);
-      word = new_word;
-    }
-    idx++;
-  }
-  arr2.push(word);
 
   const recipeData = {
     href: "recipe.html",
@@ -158,8 +109,8 @@ function Add_recipe() {
     imageAlt: recipe_name.value,
     recipeName: recipe_name.value,
     id: incId(),
-    ingredients: arr,
-    directions: arr2,
+    ingredients: Array_Formation(ingredients_inp),
+    directions: Array_Formation(description_inp),
   };
 
   recipes.push(recipeData);

@@ -1,38 +1,51 @@
-let seh = document.getElementById("search_tag");
-let ptn = document.getElementById("ptn_tag");
-let find = "";
+let search_inp = document.getElementById("search_tag");
+let search_ptn = document.getElementById("ptn_tag");
+let target = "";
 let flag = false;
-find = find.toLowerCase();
+target = target.toLowerCase();
 
 function check(recipeData) {
     let name = recipeData.recipeName.split(" ");
+    let word = "";
     name.forEach(element => {
-        let word = element.toLowerCase();
-        if (find == word) {
+        word = element.toLowerCase();
+        if (target == word) {
             flag = true;
         }
     });
+
 
     let ings = recipeData.ingredients;
     ings.forEach(element => {
         let words = element.split(" ");
         words.forEach(element => {
             word = element.toLowerCase();
-            if (find == word) {
+            let idx = 0;
+            new_word = "";
+            while(word[idx] != null) {
+                if (word[idx] >= 'a' && word[idx] <= 'z') {
+                    new_word = new_word.concat(word[idx]);
+                }
+                idx++;
+            }
+            word = new_word;
+            if (target == word) {
                 flag = true;
             }
         });
     });
 }
 
-ptn.onclick = function () {
+
+
+search_ptn.onclick = function () {
     const recipesList = document.getElementById("recipes-container");
     const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
 
     recipesList.replaceChildren();
 
-    find = seh.value;
-    find = find.toLowerCase();
+    target = search_inp.value;
+    target = target.toLowerCase();
 
     if (recipesList && recipes) {
         recipes.forEach((recipeData) => {
