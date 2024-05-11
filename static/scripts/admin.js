@@ -101,6 +101,7 @@ function Add_recipe() {
   let recipe_name = document.getElementById("recipeName");
   let ingredients_inp = document.getElementById("ingredients");
   let description_inp = document.getElementById("description");
+  let x = document.getElementById("courseName");
 
 
   const recipeData = {
@@ -108,6 +109,7 @@ function Add_recipe() {
     imagePath: "../../static/images/photo2.png",
     imageAlt: recipe_name.value,
     recipeName: recipe_name.value,
+    categories: x.value,
     id: incId(),
     ingredients: Array_Formation(ingredients_inp),
     directions: Array_Formation(description_inp),

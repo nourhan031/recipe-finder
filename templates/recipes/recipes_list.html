@@ -50,10 +50,21 @@
           </div>
           </a>
         </li>
+        <li><a href="/templates/recipes/recipe_search.html">Search</a></li>
     </ul>
 </nav>
 </header>
        <div id="recipes-container"></div>
+       <script>
+        // const recipesContainer = document.getElementById("recipes-container");
+        document.addEventListener('click', function(event) {
+          const recipeDiv = event.target.closest('[id]');
+          if (recipeDiv) {
+            const recipeId = recipeDiv.id;
+            handleRecipeClick(recipeId);
+          } 
+        });
+      </script>
        <footer>© 2024 Recipe Finder. All rights reserved.</footer>
       
 </body>

@@ -28,6 +28,7 @@ if (
     imagePath: "../../static/images/bolognese.jpg",
     imageAlt: "bolognese",
     recipeName: "Spaghetti Bolognese",
+    categories: "Lunch",
     id: incId(),
     ingredients: [
       "spaghetti",
@@ -53,6 +54,7 @@ if (
     imagePath: "../../static/images/chicken.jpg",
     imageAlt: "chicken stir fry",
     recipeName: "Stir fry",
+    categories: "Quick & Easy",
     id: incId(),
     ingredients: [
       "chicken breast",
@@ -76,11 +78,15 @@ if (
     ],
   };
 
+
+
+
   const recipeData3 = {
     href: "recipe.html",
     imagePath: "../../static/images/Crème Brûlée.jpg",
     imageAlt: "creme brulee",
     recipeName: "Creme Brulee",
+    categories: "Dessert",
     id: incId(),
     ingredients: [
       "1 quart heavy cream",
@@ -108,6 +114,7 @@ if (
     imagePath: "../../static/images/garlic_bread.jpg",
     imageAlt: "garlic bread",
     recipeName: "Garlic Bread",
+    categories: "Quick & Easy",
     id: incId(),
     ingredients: [
       "½ cup butter",
@@ -131,6 +138,7 @@ if (
     imagePath: "../../static/images/lgchicken.jpg",
     imageAlt: "lemon garlic chicken",
     recipeName: "Lemon Garlic Chicken",
+    categories: "Lunch",
     id: incId(),
     ingredients: [
       "2 tablespoons butter",
@@ -152,6 +160,7 @@ if (
     imagePath: "../../static/images/pizza.jpg",
     imageAlt: "margherita",
     recipeName: "Margherita Pizza",
+    categories: "Lunch",
     id: incId(),
     ingredients: [
       "¼ cup olive oil",
@@ -177,6 +186,7 @@ if (
     imagePath: "../../static/images/Pumpkin.jpg",
     imageAlt: "Pumpkin",
     recipeName: "Pumpkin",
+    categories: "Dessert",
     id: incId(),
     ingredients: [
       "1 (15.25 ounce) package yellow cake mix, divided",
@@ -208,6 +218,7 @@ if (
     imagePath: "../../static/images/scampi.jpg",
     imageAlt: "shrimp scampi",
     recipeName: "Shrimp Scampi",
+    categories: "Lunch",
     id: incId(),
     ingredients: [
       "2 pounds medium raw shrimp, shelled, deveined, with tails attached",
@@ -230,6 +241,7 @@ if (
     imagePath: "../../static/images/straubrry-cake.jpg",
     imageAlt: "strawberry cake",
     recipeName: "Strawberry Cake",
+    categories: "Dessert",
     id: incId(),
     ingredients: [
       "2 cups white sugar",
@@ -257,6 +269,7 @@ if (
     imagePath: "../../static/images/TofuSt.jpg",
     imageAlt: "Vegetable and Tofu Stir-fry",
     recipeName: "Vegetable and Tofu Stir-fry",
+    categories: "Lunch",
     id: incId(),
     ingredients: [
       "1 tablespoon vegetable oil",
@@ -293,6 +306,7 @@ if (
     imagePath: "../../static/images/vgchilli.jpg",
     imageAlt: "vegeterian_chilli",
     recipeName: "vegeterian chilli",
+    categories: "Quick & Easy",
     id: incId(),
     ingredients: [
       "80ml (1/3 cup) olive oil",
@@ -323,6 +337,7 @@ if (
     imagePath: "../../static/images/PB.jpg",
     imageAlt: "peanut butter",
     recipeName: "Peanut Butter",
+    categories: "Dessert",
     id: incId(),
     ingredients: [
       "2 ¼ cups creamy peanut butter",
@@ -347,6 +362,7 @@ if (
     imagePath: "../../static/images/veg_rice.jpg",
     imageAlt: "Veggie rice",
     recipeName: "Veggie Rice",
+    categories: "Lunch",
     id: incId(),
     ingredients: [
       "4 Tablespoons olive oil",

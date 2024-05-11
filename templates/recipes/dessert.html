@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dessert</title>
-    <link rel="stylesheet" href="../../static/css/nav_bar.css">
-    <link rel="stylesheet" href="../../static/css/categories.css">
-    <script src="../../static/scripts/favorites.js"></script>
-    <script src="/static/scripts/data.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link rel="stylesheet" href="../../static/css/nav_bar.css">
+  <!-- <link rel="stylesheet" href="../../static/css/recipe.css">\ -->
+  <link rel="stylesheet" href="../../static/css/categories.css">
+  <script src="../../static/scripts/Dessert_recipes.js"></script>
+  <script src="/static/scripts/data.js"></script>
+  
+  <style>
+    #favorites-container {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+    #favorites-container li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #ccc;
+        }
+    #ffavorites-container li:last-child {
+        border-bottom: none;
+        }
+  </style>
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            <h1>Dessert</h1>       
-         </div>
-    <!-- Navigation Bar -->
-    <nav id="navbar" class="navbar" class="navbar hidden">
-        <ul>
-            <li><a href="/templates/base.html">Home</a></li>
+  <header>
+    <div class="logo">
+        <h1>Dessert</h1>
+    </div>
+<!-- Navigation Bar -->
+<nav id="navbar" class="navbar" class="navbar hidden">
+    <ul>
+      <li><a href="/templates/base.html">Home</a></li>
         <li class="dropdown">
           <a href="#" id="explore">Explore</a>
           <div class="dropdown-content">
@@ -33,43 +47,25 @@
           <div class="dropdown-content">
             <a href="/templates/authenticate/login.html">Login</a>
             <a href="/templates/authenticate/signup.html">Sign-up</a>
-        
           </div>
           </a>
         </li>
-            <i class="fa fa-star-o"></i> </button> </li> <li> <a href="favorites.html">Favorites</a> </li> 
-        </ul>
-    </nav>
-    </header>
-    <div class="category">
-        <a href="viewPB.html">
-            <img src="../../static/images/PB.jpg" alt="PB treats">
-            <div class="caption">No bake peanut butter treats</div>
-        </a>
-    </div>
-
-
-
-    <div class="category">
-        <a href="Strawberry_cake.html">
-            <img src="../../static/images/straubrry-cake.jpg" alt="veg rice">
-            <div class="caption">Strawberry cake</div>
-        </a>
-    </div>
-
-    <div class="category">
-        <a href="Crème_Brûlée.html">
-            <img src="../../static/images/Crème Brûlée.jpg" alt="Crème Brûlée">
-            <div class="caption">Crème Brûlée</div>
-        </a>
-    </div>
-
-    <div class="category">
-        <a href="Pumpkin.html">
-            <img src="../../static/images/Pumpkin.jpg" alt="Pumpkin ">
-            <div class="caption">Pumpkin</div>
-        </a>
-    </div>
-    <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+        <li><a href="/templates/recipes/recipe_search.html">Search</a></li>
+    </ul>
+</nav>
+</header>
+       <div id="recipes-container"></div>
+       <script>
+        // const recipesContainer = document.getElementById("recipes-container");
+        document.addEventListener('click', function(event) {
+          const recipeDiv = event.target.closest('[id]');
+          if (recipeDiv) {
+            const recipeId = recipeDiv.id;
+            handleRecipeClick(recipeId);
+          } 
+        });
+      </script>
+       <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+      
 </body>
 </html>

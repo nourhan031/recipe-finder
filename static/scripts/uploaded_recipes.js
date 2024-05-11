@@ -47,8 +47,11 @@ function createrecipeElement(recipeData) {
   const recipeCaption = document.createElement('div');
   recipeCaption.classList.add('caption');
   recipeCaption.textContent = recipeData.recipeName;
+  const recipeCatergories = document.createElement('ctg');
+  
   recipelink.appendChild(recipeImage);
   recipelink.appendChild(recipeCaption);
   recipeDiv.appendChild(recipelink);
+  recipeDiv.appendChild(recipeCatergories);
   return recipeDiv;
 }
