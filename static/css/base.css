@@ -140,7 +140,9 @@ footer {
   bottom: 0;
   width: 100%;
   font-family: Rubik, sans-serif;
-  margin-left: -7px;
+  margin-left: 10px;
+  left: 0;
+  margin-left: 0px;
 }
 
 .recipe-card {
