@@ -7,13 +7,26 @@
     <link rel="stylesheet" href="../../static/css/admin_dashboard.css">
     <link rel="stylesheet" href="../../static/css/nav_bar.css">
     <script src="../../static/scripts/uploaded_recipes.js"></script>
+    <script src="/static/scripts/admin_dash.js"></script>
     <link rel="stylesheet" href="../../static/css/categories.css">
     <script src="/static/scripts/data.js"></script>
+
+    <style>
+      table {
+    border-collapse: collapse;
+    align-items: center;
+       }
+
+      table, th, td {
+    border: 1px solid black;
+       }
+
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>Admin Dashboard</h1>
+            <!-- <h1>Admin Dashboard</h1> -->
         </div>
     <nav id="navbar" class="navbar" class="navbar hidden">
           <ul>
@@ -40,10 +53,25 @@
       </nav>
     </header>
     <div class="container">
+        <h1>Admin Dashboard</h1> 
         <!-- Button to Add New Recipe -->
         <a href="admin_add_recipe.html" class="add-recipe"><button>Modify</button></a>
-
-        <div id="recipes-container"></div>
+        <table id="recipes-table">
+          <thead>
+              <tr>
+                <th rowspan="2">Recipe Name</th>
+                <th colspan="2">Actions</th>
+              </tr>
+              <tr>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="recipes-container">
+              <!-- Recipes will be inserted here -->
+          </tbody>
+      </table>
+        <!-- <div id="recipes-container"></div>
         <script>
          // const recipesContainer = document.getElementById("recipes-container");
          document.addEventListener('click', function(event) {
@@ -53,7 +81,7 @@
              handleRecipeClick(recipeId);
            } 
          });
-       </script>
+       </script> -->
 
          
     </div>
