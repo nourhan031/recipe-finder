@@ -108,6 +108,8 @@ function handleRecipeClick(recipeId) {
 
 
 
+
+
 function createrecipeElement(recipeData) {
     if (!recipeData.href || recipeData.href === '') {
         return;
