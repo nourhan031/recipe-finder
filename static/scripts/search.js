@@ -64,7 +64,9 @@ search_ptn.onclick = function () {
             }
         });
     }
-}
+} 
+
+
 
 
 search_recipe.onclick = function(){
