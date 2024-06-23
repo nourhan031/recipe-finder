@@ -31,29 +31,5 @@ function Array_Formation(User_input) {
 
 
 
-function Add_recipe() {
-  
-  let recipe_name = document.getElementById("recipeName");
-  let ingredients_inp = document.getElementById("ingredients");
-  let description_inp = document.getElementById("description");
-  let x = document.getElementById("courseName");
-
-
-  const recipeData = {
-    href: "recipe.html",
-    imagePath: "../../static/images/photo2.png",
-    imageAlt: recipe_name.value,
-    recipeName: recipe_name.value,
-    categories: x.value,
-    id: incId(),
-    ingredients: Array_Formation(ingredients_inp),
-    directions: Array_Formation(description_inp),
-  };
-
-  recipes.push(recipeData);
-  localStorage.setItem("recipes", JSON.stringify(recipes));
-  console.log(`Recipe '${recipe_name.value}' added successfully.`);
-  alert(`Recipe '${recipe_name.value}' added successfully.`);
-}
 
 

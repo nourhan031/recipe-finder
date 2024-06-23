@@ -19,7 +19,24 @@ document.getElementById('recipe-form').addEventListener('submit', function(event
     
     console.log('New Recipe:', newRecipe);
     
+    
     // Add your code here to save the new recipe or update the UI
+
+    const recipeData = {
+        href: "recipe.html",
+        imagePath: "../../static/images/photo2.png",
+        imageAlt: newRecipe.name,
+        recipeName: newRecipe.name,
+        categories: "Main course",
+        id: incId(),
+        ingredients: newRecipe.ingredients,
+        directions: newRecipe.steps,
+      };
+    
+      recipes.push(recipeData);
+      localStorage.setItem("recipes", JSON.stringify(recipes));
+      console.log(`Recipe '${recipe_name.value}' added successfully.`);
+      alert(`Recipe '${recipe_name.value}' added successfully.`);
 });
 
 function addIngredient() {
@@ -41,3 +58,11 @@ function addStep() {
 function removeElement(button) {
     button.parentElement.remove();
 }
+
+function Add_recipe() {
+  
+  
+    
+
+  }
+  

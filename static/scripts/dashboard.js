@@ -27,6 +27,9 @@ function createTable() {
                 let bt = document.createElement("button");
                 bt.textContent = "Delete";
                 td.appendChild(bt);
+                bt.onclick = function() {
+                  deleteRecipe(recipe.recipeName);
+                }
             }
             tr.appendChild(td);
         }
@@ -38,14 +41,19 @@ function createTable() {
 
 createTable();
 
-function deleteRecipe() {
-    let recipeName = document.getElementById("delrecipeName");
+
+
+function deleteRecipe(name) {
+  
+    let recipeName = name;
     let recipes = JSON.parse(localStorage.getItem("recipes"));
   
     if (recipes) {
-      const index = recipes.findIndex(
-        (recipe) => recipe.recipeName === recipeName.value
+      let index = recipes.findIndex(
+        (recipe) => recipe.recipeName === recipeName
       );
+
+      
   
       if (index !== -1) {
         recipes.splice(index, 1);
@@ -53,7 +61,7 @@ function deleteRecipe() {
         localStorage.setItem("recipes", JSON.stringify(recipes));
   
         console.log(`Recipe '${recipeName}' deleted successfully.`);
-        alert(`Recipe '${recipeName.value}' deleted successfully.`);
+        alert(`Recipe '${recipeName}' deleted successfully.`);
       } else {
         console.log(`Recipe '${recipeName}' not found.`);
       }
@@ -106,14 +114,4 @@ function deleteRecipe() {
     }
   }
   
-  
-
-  dlt.onclick = function () {
-    deleteRecipe();
-  };
-  
-  
-  edit.onclick = function () {
-    edit_recipe();
-  };
   
