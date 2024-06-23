@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+  <script src="{% static 'scripts/uploaded_recipes.js' %}"></script>
+  <script src="{% static 'scripts/data.js' %}"></script>
+  
+  <style>
+    #favorites-container {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    #favorites-container li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #ccc;
+    }
+    #favorites-container li:last-child {
+        border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <h1>Recipes</h1>
+    </div>
+    <!-- Navigation Bar -->
+    {% include 'nav_bar.html' %}
+  </header>
+
+  <div id="recipes-container"></div>
+  
+  <script>
+    document.addEventListener('click', function(event) {
+      const recipeDiv = event.target.closest('[id]');
+      if (recipeDiv) {
+        const recipeId = recipeDiv.id;
+        handleRecipeClick(recipeId);
+      }
+    });
+  </script>
+  
+</body>
+</html>

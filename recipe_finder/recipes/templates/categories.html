@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}">
+</head>
+
+<body>
+    {% include 'nav_bar.html' %}
+
+    <div class="logo">
+        <h1>Categories</h1>
+    </div>
+    
+    <div class="category">
+        <a href="{% url 'category_recipes' category='lunch' %}">
+            <img src="{% static 'images/lunch.jpeg' %}" alt="Lunch">
+            <div class="caption">Main Course</div>
+        </a>
+    </div>
+
+    <div class="category">
+        <a href="{% url 'category_recipes' category='dessert' %}">
+            <img src="{% static 'images/dessert.jpeg' %}" alt="Dessert">
+            <div class="caption">Dessert</div>
+        </a>
+    </div>
+
+    <div class="category">
+        <a href="{% url 'category_recipes' category='quick_easy' %}">
+            <img src="{% static 'images/quick_easy.jpg' %}" alt="Quick & Easy">
+            <div class="caption">Appetizers</div>
+        </a>
+    </div>
+
+</body>
+</html>

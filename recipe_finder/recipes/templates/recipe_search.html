@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+  <style>
+    #favorites-container {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    #favorites-container li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #ccc;
+    }
+    #favorites-container li:last-child {
+        border-bottom: none;
+    }
+    #search_tag {
+        padding: 10px;
+        margin: 15px;
+        font-size: 17px;
+        border: 2px solid #fda4af;
+        border-radius: 5px;
+    }
+    #ptn_tag, #ptn_recipe, #ptn_clr {
+        background-color: #fda4af;
+        color: #fff1f2;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  {% include 'nav_bar.html' %}
+  
+  <input type="text" id="search_tag">
+  <button id="ptn_tag">Search by ingredient</button>
+  <button id="ptn_recipe">Search for a recipe</button>
+  
+  <div id="recipes-container"></div>
+  
+  
+  <script>
+    document.addEventListener('click', function(event) {
+      const recipeDiv = event.target.closest('[id]');
+      if (recipeDiv) {
+        const recipeId = recipeDiv.id;
+        handleRecipeClick(recipeId);
+      }
+    });
+  </script>
+  
+  <script src="{% static 'scripts/search.js' %}"></script>
+</body>
+</html>
