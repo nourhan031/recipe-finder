@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_add_recipe.css' %}">
+</head>
+
+<body>
+    {% include 'nav_bar.html' %}
+
+    <header>
+        <div class="logo">
+            <!-- <h1>Edit Recipe</h1> -->
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Edit Recipe Form -->
+        <div id="edit-recipe-form">
+            <h2>Edit Recipe</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'scripts/data.js' %}"></script>
+    <script src="{% static 'scripts/admin.js' %}"></script>
+
+</body>
+
+</html>

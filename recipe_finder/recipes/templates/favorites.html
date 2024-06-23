@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+    <style>
+        #favorites-container {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #favorites-container li {
+            padding: 0.5rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #favorites-container li:last-child {
+            border-bottom: none;
+        }
+    </style>
+    <script>
+        let logged_in_user = JSON.parse(localStorage.getItem("loggedUser"));
+        let logged_in_admin = JSON.parse(localStorage.getItem("loggedAdmin"));
+        if (logged_in_user == false || logged_in_admin == true) {
+            alert("log in first!!");
+            window.location.href = "{% url 'login' %}";
+        }
+    </script>
+</head>
+
+<body>
+    {% include 'nav_bar.html' %}
+
+    <div id="favorites-container"></div>
+
+    <script src="{% static 'scripts/favorites.js' %}"></script>
+    <script>
+        window.onload = function () {
+            // Get the favorites from local storage
+            const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            // Create a list of favorites
+            const favoritesList = document.getElementById("favorites-container");
+            if (favoritesList && favorites) {
+                favorites.forEach((recipeData) => {
+                    if (recipeData) {
+                        if (recipeData.href && recipeData.href !== '') {
+                            const favoriteDiv = createFavoriteElement(recipeData);
+                            favoritesList.appendChild(favoriteDiv);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
