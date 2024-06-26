@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,58 +14,36 @@
 <body>
     {% include 'nav_bar.html' %}
 
-    <header>
-        <div class="logo">
-            <!-- <h1>Add New Recipe</h1> -->
-        </div>
-       
-    </header>
+    
     <div class="container">
         <!-- <h1>Admin Dashboard</h1> -->
 
-
-        <!-- Add New Recipe Form -->
-        <div id="add-recipe-form">
-            <h2>Add Modification</h2>
-            <form id="add-recipe">
-                <label for="recipeName">Recipe Name:</label>
-                <input type="text" id="recipeName" name="recipeName" required>
-                <label for="courseName">Course Name:</label>
-                <select id="courseName" name="courseName" required>
-                    <option value="Lunch">Main course</option>
-                    <option value="Dessert">Dessert</option>
-                    <option value="Quick & Easy">Appetizers</option>
-                </select>
-
-                <label for="ingredients">Ingredients:</label>
-                <textarea id="ingredients" name="ingredients" rows="4"
-                    placeholder="instructions: After each ingredient write letter “,” and After the last ingredient write “.”"
-                    required></textarea>
-
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4"
-                    placeholder="instructions: After each direction write letter “,” and After the last direction, write “.”"
-                    required></textarea>
-
-
-                <button type="submit" id="ptn_add">Add Recipe</button>
-                <button type="submit" id="ptn_edit">Edit Recipe</button>
-
-            </form>
+        <h1>Add New Recipe</h1>
+        <form id="recipe-form">
+            <div class="input-group">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" name="recipe-name" required>
+            </div>
+            <div class="input-group" id="ingredients-group">
+                <label>Ingredients:</label>
+                <div class="ingredient-item">
+                    <input type="text" name="ingredient" required>
+                    <button type="button" onclick="addIngredient()">+</button>
+                </div>
+            </div>
+            <div class="input-group" id="steps-group">
+                <label>Steps:</label>
+                <div class="step-item">
+                    <input type="text" name="step" required>
+                    <button type="button" onclick="addStep()">+</button>
+                </div>
+            </div>
+            <button type="submit">Add Recipe</button>
+        </form>
 
         </div>
 
-        <div id="add-recipe-form">
-            <h2>Delete recipe</h2>
-            <form id="add-recipe">
-                <label for="recipeName">Recipe Name:</label>
-                <input type="text" id="delrecipeName" name="recipeName" required>
-                <button type="submit" id="ptn_dlt">Delete Recipe</button>
-
-
-            </form>
-
-        </div>
+        
 
         <div id="recipe-list">
             <!-- List of Available Recipes -->
@@ -76,8 +55,11 @@
             <!-- Include fields to edit recipe details -->
         </div>
     </div>
+
     <script src="{% static 'scripts/data.js' %}"></script>
     <script src="{% static 'scripts/admin.js' %}"></script>
+    <script src="{% static 'scripts/temp.js' %}"></script>
+
 
 </body>
 

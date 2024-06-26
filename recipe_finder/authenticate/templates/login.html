@@ -12,27 +12,33 @@
 <body>
     {% include 'nav_bar.html' %}
 
-    <header>
-        <div class="logo">
-            <h1>Login</h1>
-        </div>
-    </header>
 
     <div class="form-frame">
-        <form action="#" method="POST" onsubmit="return login_redirect()">
+        <form id="loginForm" method="POST" onsubmit="return login_redirect()">
+            {% csrf_token %}
+            
             <div>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required>
+                <label for="id_username">Username:</label><br>
+                {{ form.username }}
+                {% for error in form.username.errors %}
+                    <span class="error">{{ error }}</span><br>
+                {% endfor %}
             </div><br>
+            
             <div>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required>
+                <label for="id_password">Password:</label><br>
+                {{ form.password }}
+                {% for error in form.password.errors %}
+                    <span class="error">{{ error }}</span><br>
+                {% endfor %}
             </div><br>
-            <label for="role">Choose Role:</label><br>
-            <select id="role" name="role">
+            
+            <label for="id_role">Choose Role:</label><br>
+            <select id="id_role" name="role">
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
             </select><br><br>
+            
             <input type="submit" value="Login">
         </form>
     </div>

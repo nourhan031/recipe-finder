@@ -1,0 +1,36 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300&display=swap");
+
+/* Reset some default styles */
+body,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+}
+

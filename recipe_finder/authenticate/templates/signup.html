@@ -1,46 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}"> -->
     <script src="{% static 'scripts/authenticate.js' %}"></script>
-</head>
-<body>
+  </head>
+  <body>
     {% include 'nav_bar.html' %}
 
-    <header>
-        <div class="logo">
-            <h1>Sign Up</h1>
-        </div>
-    </header>
-
     <div class="form-frame">
-        <form action="#" method="POST" onsubmit="return signup_redirect()">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br>
+      <form id="signupForm" method="POST" onsubmit="return signup_redirect()">
+        {% csrf_token %}
 
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br>
+        <label for="id_username">Username:</label><br />
+        {{ form.username }} {% for error in form.username.errors %}
+        <span class="error">{{ error }}</span><br />
+        {% endfor %}
 
-            <label for="confirm_password">Confirm Password:</label><br>
-            <input type="password" id="confirm_password" name="confirm_password" required><br>
+        <label for="id_password1">Password:</label><br />
+        {{ form.password1 }} {% for error in form.password1.errors %}
+        <span class="error">{{ error }}</span><br />
+        {% endfor %}
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
+        <label for="id_password2">Confirm Password:</label><br />
+        {{ form.password2 }} {% for error in form.password2.errors %}
+        <span class="error">{{ error }}</span><br />
+        {% endfor %}
 
-            <label for="role">Choose Role:</label><br>
-            <select id="role" name="role">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-            </select><br><br>
+        <label for="id_email">Email:</label><br />
+        {{ form.email }} {% for error in form.email.errors %}
+        <span class="error">{{ error }}</span><br />
+        {% endfor %}
 
-            <input type="submit" value="Sign Up">
-        </form>
+        <label for="id_role">Choose Role:</label><br />
+        <select id="id_role" name="role">
+          <option value="user">User</option>
+          <option value="admin">Admin</option></select
+        ><br /><br />
+
+        <input type="submit" value="Sign Up" />
+      </form>
     </div>
-    
-</body>
+  </body>
 </html>
