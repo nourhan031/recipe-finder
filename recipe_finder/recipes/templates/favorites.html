@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}" />
+    <style>
+      #favorites-container {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #favorites-container li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #ccc;
+      }
+
+      #favorites-container li:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include 'nav_bar.html' %}
+
+    <div id="favorites-container">
+      {% for x in favorites %}
+      <div class="category" id="{{ x.id }}">
+        <a href="{% url 'recipe' x.id %}">
+          <img src="{{x.image.url}}" alt="{{x.recipe_name}}" />
+        </a>
+        <div class="caption">{{ x.recipe_name }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <script src="{% static 'scripts/favorites.js' %}"></script>
+  </body>
+</html>

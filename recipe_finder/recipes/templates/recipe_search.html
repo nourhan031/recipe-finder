@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/categories.css' %}" /> -->
+    <style>
+      body {
+        background-color: #fff0f2;
+      }
+
+      .category {
+        display: inline-block;
+        margin: 20px;
+        position: relative;
+      }
+
+      .category img {
+        width: 150px;
+        height: 150px;
+        border-radius: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .category:hover img {
+        transform: scale(1.1);
+      }
+
+      .category:hover .caption {
+        opacity: 1;
+      }
+
+      .category .caption {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      #favorites-container {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      #favorites-container li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #ccc;
+      }
+      #favorites-container li:last-child {
+        border-bottom: none;
+      }
+      #search_tag {
+        padding: 10px;
+        margin: 15px;
+        font-size: 17px;
+        border: 2px solid #fda4af;
+        border-radius: 5px;
+      }
+      #ptn_tag,
+      #ptn_recipe,
+      #ptn_clr {
+        background-color: #fda4af;
+        color: #fff1f2;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'nav_bar.html' %}
+
+    <input type="text" id="search_tag" />
+    <button id="ptn_recipe">Search by recipe name</button>
+    <button id="ptn_tag">Search by ingredient</button>
+
+    <div id="recipes-container"></div>
+    <script>
+      document.addEventListener("click", function (event) {
+        const recipeDiv = event.target.closest("[id]");
+        if (recipeDiv) {
+          const recipeId = recipeDiv.id;
+          handleRecipeClick(recipeId);
+        }
+      });
+    </script>
+
+    <script src="{% static 'scripts/data.js' %}"></script>
+    <script src="{% static 'scripts/search.js' %}"></script>
+  </body>
+</html>

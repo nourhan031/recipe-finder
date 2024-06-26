@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/recipe.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}" />
+    <script src="{% static 'scripts/favorites.js' %}"></script>
+    <script src="{% static 'scripts/data.js' %}"></script>
+  </head>
+  <body>
+    {% include 'nav_bar.html' %}
+
+    <h1 id="recipe-name" style="text-align: center">{{recipe.recipe_name}}</h1>
+    <form action="{% url 'like' recipe.id %}" method="get">
+      {% if addFavorite %}
+      <button type="submit" id="favorite-button">
+        Add to Favorites <i class="fa fa-heart-o" aria-hidden="true"></i>
+      </button>
+      {% else %}
+      <button type="submit" id="favorite-button">Remove from favorites</button>
+      {% endif %}
+    </form>
+
+    <h2>Ingredients</h2>
+    <div class="ingredients-ul">
+      <ul id="ingredients">
+        "{{recipe.ingredients}}"
+      </ul>
+    </div>
+
+    <h2>Directions</h2>
+    <div class="ingredients-ol">
+      <ul id="ingredients">
+        "{{recipe.ingredients}}"
+      </ul>
+      <ol id="directions"></ol>
+    </div>
+
+    <footer>© 2024 Recipe Finder. All rights reserved.</footer>
+  </body>
+</html>

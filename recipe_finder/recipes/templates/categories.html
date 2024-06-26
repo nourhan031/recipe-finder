@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories</title>
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}" />
+  </head>
+
+  <body>
+    {% include 'nav_bar.html' %}
+
+    <div class="logo">
+      <h1>Categories</h1>
+    </div>
+
+    <div class="category-container">
+      {% for x in categories %}
+      <div class="category">
+        <a href="{% url 'category_recipes' x.category_name %}">
+          <img src="{{x.image.url}}" alt="{{x.category_name}}" />
+        </a>
+        <div class="caption">{{ x.category_name }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
