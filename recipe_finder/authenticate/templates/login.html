@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav_bar.css' %}">
+    <script src="{% static 'scripts/authenticate.js' %}"></script>
+</head>
+<body>
+    {% include 'nav_bar.html' %}
+
+
+    <div class="form-frame">
+        <form id="loginForm" method="POST" onsubmit="return login_redirect()">
+            {% csrf_token %}
+            
+            <div>
+                <label for="id_username">Username:</label><br>
+                {{ form.username }}
+                {% for error in form.username.errors %}
+                    <span class="error">{{ error }}</span><br>
+                {% endfor %}
+            </div><br>
+            
+            <div>
+                <label for="id_password">Password:</label><br>
+                {{ form.password }}
+                {% for error in form.password.errors %}
+                    <span class="error">{{ error }}</span><br>
+                {% endfor %}
+            </div><br>
+            
+            <label for="id_role">Choose Role:</label><br>
+            <select id="id_role" name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select><br><br>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>
